@@ -1,0 +1,142 @@
+/*------------------------------------*\
+  #STYLE DE LA PAGE DE SELECTION
+\*------------------------------------*/
+
+*:focus
+{
+    outline: none;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	margin:0px;
+	padding:0px;
+	background-color:#212D3A;
+}
+
+body:after{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(images/noise.gif);
+    opacity: .02;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+/* TOP */
+
+
+/* CONTENT */
+#content{
+    width:70%;
+    margin:auto;
+}
+
+#content ul{
+    text-decoration: none;
+    margin: 0px;
+    padding:15px;
+    border-bottom: 0.2px solid #4E4E4E; 
+}
+
+#content li{
+    font-family: 'LEMON/MILK light', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    list-style: none;
+    display: inline-block;
+    padding-left:80px;
+    padding-right:80px;
+}
+
+#php_content{
+    height:500px;
+}
+
+#musique{
+    width: 100%;
+    height: 40px;
+    background-color: #31373E;
+    border-bottom: 0.2px solid #4E4E4E;
+}
+
+/*#control{
+	background-color:#31373E;
+	margin:0px;
+	padding:0px;
+}
+
+#control img{
+	width:20px;
+	text-align: center;
+}*/
+
+#control
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #31373E;
+}
+
+#player_control{
+    width: 500px;
+    margin: auto;
+}
+
+#player_control ul{
+    text-decoration: none;
+    text-align: center;
+}
+
+#player_control li{
+    list-style: none;
+    display: inline-block;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.control
+{
+    width: 33.333%;
+    float: left;
+    padding: 12px 0;
+}
+
+.button
+{
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.button i
+{
+    display: block;
+    color: #d6dee7;
+    font-size: 26px;
+    text-align: center;
+    line-height: 1;
+}
+
+.button:hover i
+{
+    color: #fff;
+}
+
+/*------------------------------------*\
+  #RESPONSIVE
+\*------------------------------------*/
+
+@media (max-width: 768px) { 
+
+}
