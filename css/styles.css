@@ -1,0 +1,199 @@
+/* --------- SET --------- */
+
+body {
+	color: #f9daf6;
+	background-color: #212D3A;
+	font-family: Montserrat,sans serif;
+}
+
+body:after{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(images/noise.gif);
+    opacity: .05;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+ul {
+   list-style: none;
+}
+
+/* --------- FONT --------- */
+
+
+@font-face {
+    font-family:Zwizz-Regular;
+    src: url(fonts/ZwizzRegular.ttf);
+}
+
+@font-face {
+    font-family:Zwizz-Bold;
+    src: url(fonts/ZwizzBold.ttf);
+}
+
+/* --------- ONE PAGE --------- */
+
+#top {
+    top: 0;
+    left: 0;
+}
+
+#right {
+    top: 0;
+    right: 0;
+}
+
+#left {
+    bottom: 0;
+    left: 0;
+}
+
+#bottom {
+    bottom: 0;
+  right: 0;
+}
+#left, #right {
+  width: 10px;
+  height: 100%;
+}
+
+#top, #bottom {
+  width: 100%;
+  height: 10px;
+}
+
+#border > div {
+  position: fixed;
+  z-index: 10;
+  background-color: #ffdefc;
+    }
+
+
+.one-page{
+	height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.title{
+	margin: 0;
+    background: #202d3a;
+    width: 100%;
+    text-align: center;
+    font-size: 7em;
+    font-family: "Zwizz-Bold",sans-serif;
+    color: #202c3a;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f9daf6a1;
+
+}
+
+.title>span {
+	font-weight: 300;
+    letter-spacing: 5px;
+    color: #f9daf6;
+     -webkit-text-stroke-width: none;
+
+}
+
+.gif-bg{
+	position: absolute;
+    z-index: -1;
+}
+
+.intro{
+        position: absolute;
+    right: 100px;
+    font-size: 1em;
+    font-weight: 500;
+    width: 14vw;
+}
+
+.fixed-title {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    font-size: 1em;
+    z-index: 2;
+}
+
+/* --------- SELECT MOOD --------- */
+
+.select-mood {
+    align-items: flex-start;
+    position: relative;
+}
+
+.select-mood h1, .select-mood h2 {
+    margin-left: 30px;    
+}
+
+.select-mood > h1 {
+    z-index: -1;
+    margin: 0;
+    font-size: 5.5em;
+    margin-top: 0;
+    margin-left: 30px;
+    color: #212D3A;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fdddfa40;
+}
+
+.select-mood button[type='submit']{
+    color: #f4d5f2;
+    border: 5px solid #f4d5f2;
+    font-size: 25px;
+    font-weight: 600;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 1%;
+}
+
+.select-mood form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* --------- GIF --------- */
+
+
+.pop-media {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+
+.pop-media__overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+
+
