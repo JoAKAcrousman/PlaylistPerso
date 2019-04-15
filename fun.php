@@ -33,7 +33,7 @@
 			<div id="php_content">
 <?php
 ///AFFICHE LE NOM DES MUSIQUES
-/*require_once "api/MyPDO.elisaciaks9.include.php";
+require_once "api/MyPDO.elisaciaks9.include.php";
 
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	SELECT *
@@ -46,7 +46,7 @@ $stmt->execute();
 while (($row = $stmt->fetch()) !== false) {
 	//AFFICHER LES INFOS QUAND ON CLIQUE AJAX ?????
 	echo "<div id=musique onclick=affiche_playerAudio()>{$row['nom_titre']}</div>";
-}*/
+}
 ?>
 			</div>
 		</div>
