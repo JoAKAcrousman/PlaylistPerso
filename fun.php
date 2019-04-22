@@ -31,23 +31,78 @@
 				<li> DUREE </li>
 			</ul>
 			<div id="php_content">
+				<div id="titre">
 <?php
 ///AFFICHE LE NOM DES MUSIQUES
+
 require_once "api/MyPDO.elisaciaks9.include.php";
 
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	SELECT *
-	FROM Titre
+	FROM `Titre`, `Mood`, `link_titre_mood`
+	WHERE Mood.id_mood = link_titre_mood.id_mood
+	AND Titre.id_titre = link_titre_mood.id_titre
+	AND Mood.nom_mood = 'Fun'
 SQL
 );
 
 $stmt->execute();
 
+$nb = 0;
 while (($row = $stmt->fetch()) !== false) {
-	//AFFICHER LES INFOS QUAND ON CLIQUE AJAX ?????
-	echo "<div id=musique onclick=affiche_playerAudio()>{$row['nom_titre']}</div>";
+	$nb++;
+	echo "<div id=musique$nb onclick=affiche_playerAudio$nb()>{$row['nom_titre']}</div>";
+	//echo "<br/> Image de l'oeuvre : <img src=".$row['img_titre']."> <br/>";
+}
+
+?>
+				</div>
+				<div id="artiste">
+<?php
+
+$stmt = MyPDO::getInstance()->prepare(<<<SQL
+	SELECT nom_artiste
+	FROM `Titre`, `Artiste`, `link_titre_artiste`, `Mood`, `link_titre_mood`
+	WHERE Titre.id_titre = link_titre_artiste.id_titre
+	AND Artiste.id_artiste = link_titre_artiste.id_artiste
+	AND Mood.id_mood = link_titre_mood.id_mood
+	AND Titre.id_titre = link_titre_mood.id_titre
+	AND Mood.nom_mood = 'Fun'
+SQL
+);
+
+$stmt->execute();
+
+$ab = 0;
+while (($row = $stmt->fetch()) !== false) {
+	$ab++;
+	echo "<div id=musique$ab onclick=affiche_playerAudio$ab()>{$row['nom_artiste']}</div>";
 }
 ?>
+				</div>
+				<div id="album">
+<?php
+
+$stmt = MyPDO::getInstance()->prepare(<<<SQL
+	SELECT nom_album
+	FROM `Titre`, `Album`, `link_titre_album`, `Mood`, `link_titre_mood`
+	WHERE Titre.id_titre = link_titre_album.id_titre
+	AND Album.id_album = link_titre_album.id_album
+	AND Mood.id_mood = link_titre_mood.id_mood
+	AND Titre.id_titre = link_titre_mood.id_titre
+	AND Mood.nom_mood = 'Fun'
+SQL
+);
+
+$stmt->execute();
+
+$hb = 0;
+while (($row = $stmt->fetch()) !== false) {
+	$hb++;
+	echo "<div id=musique$hb onclick=affiche_playerAudio$hb()>{$row['nom_album']}</div>";
+}
+?>
+				</div>
 			</div>
 		</div>
 
