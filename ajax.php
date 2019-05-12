@@ -1,6 +1,9 @@
 <?php
 require_once "api/MyPDO.elisaciaks9.include.php";
 
+//supervariable $_GET
+$title = $_GET['title'];
+
 //REQUETE DIFFERENTE POUR CHAQUE TITRE
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	SELECT *
@@ -8,7 +11,7 @@ $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	WHERE Mood.id_mood = link_titre_mood.id_mood
 	AND Titre.id_titre = link_titre_mood.id_titre
 	AND Mood.nom_mood = 'Fun'
-	AND Titre.nom_titre = 'Je m\'voyais déjà'
+	AND Titre.nom_titre = '$title'
 SQL
 );
 
@@ -22,7 +25,7 @@ while (($row = $stmt->fetch()) !== false) {
 	echo '<audio controls="controls" preload="none">'
                     .'<source src="' . $row['mp3_titre'] . '" type="audio/mp3" />'
                     .'Votre navigateur n\'est pas compatible'
-                    .'</audio>';
+                    .'</audio>';     
 	echo "</div>";
 	echo "</div>";
 }

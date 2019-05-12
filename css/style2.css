@@ -37,22 +37,25 @@ body:after{
     margin:auto;
 }
 
-#content ul{
+#criteres ul{
     text-decoration: none;
     margin: 0px;
     padding:15px;
     border-bottom: 0.2px solid #4E4E4E; 
 }
 
-#content li{
+#criteres li{
     font-family: 'LEMON/MILK light', sans-serif;
     font-size: 14px;
     line-height: 14px;
     color: white;
     list-style: none;
     display: inline-block;
-    padding-left:80px;
-    padding-right:80px;
+    width: 33%;
+}
+
+li label{
+    margin-left: 10px;
 }
 
 #php_content{
@@ -61,8 +64,25 @@ body:after{
     margin-bottom:400px;
 }
 
-#titre{
-    padding-left: 95px;
+#php_content ul{
+    text-decoration: none;
+    margin: 0px;
+    padding:15px;
+    border-bottom: 0.2px solid #4E4E4E; 
+}
+
+#php_content li{
+    font-family: 'LEMON/MILK light', sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+    color: white;
+    display: inline-block;
+    list-style: none;
+    width: 33.33%;
+}
+
+#php_content li:hover {
+    background-color:#2B3049;
 }
 
 #artiste{
@@ -137,6 +157,10 @@ body:after{
     margin-top: 0px;
 }
 
+#audio{
+    text-align: center;
+}
+
 #player_control{
     width: 500px;
     margin: auto;
@@ -186,6 +210,17 @@ body:after{
   #RESPONSIVE
 \*------------------------------------*/
 
-@media (max-width: 768px) { 
+@media (max-width: 1500px) { 
+    #criteres li{
+    padding-left:80px;
+    padding-right:100px;
+    }
+}
 
+
+@media (max-width: 768px) { 
+    #criteres li{
+    padding-left:80px;
+    padding-right:10px;
+    }
 }
