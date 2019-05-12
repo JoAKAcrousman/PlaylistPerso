@@ -34,9 +34,7 @@
 			<div id="php_content">
 				<form method="GET" action="createPlaylist.php">
 				<div id="titre">
-					<?php
-					require('test.php');
-					?>
+				
 				</div>
 
 				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
