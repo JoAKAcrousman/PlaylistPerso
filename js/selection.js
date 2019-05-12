@@ -51,11 +51,19 @@ document.ready( () => {
 	fetch("./test.php") 
 		.then( response => response.json() )
 		.then( data => {
-			let genres = document.getElementById('titre');
+			let titre = document.getElementById('titre');
 			data.forEach( musique => {
-				let label = document.createElement("label")
-				label.htmlFor = "input-radio-" + musique.toLowerCase();
+
+
+
+				let label = document.createElement("label");
+				// label.htmlFor = "input-radio-" + musique.toLowerCase();
 				label.innerHTML = musique;
+
+				let input = document.createElement("input");
+				input.type = "checkbox";
+				input.value = musique;
+				input.name = "titre[]";
 
 				//création du checkbox
 				/*let radio = document.createElement("input");
@@ -65,11 +73,13 @@ document.ready( () => {
 				radio.id = "input-radio-" + musique.toLowerCase();*/
 				
 				let li  = document.createElement("li");
-				li.onclick=function(){affiche_playerAudio(musique);}
+				label.onclick=function(){affiche_playerAudio(musique);}
 
 				//li.appendChild(radio);
+				// li.appendChild(label);
+				titre.appendChild(li);
+				li.appendChild(input);
 				li.appendChild(label);
-				genres.appendChild(li);
 
 				//compter le nombre de li
 				//var lenghtli = document.querySelectorAll("#titre li").length;

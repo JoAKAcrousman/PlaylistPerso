@@ -64,7 +64,7 @@
 
 			<button id="trigger-sad" class="pop-text" data-pop-media="sad" type="submit" value="sad">SAD</button>
 
-			<button id="trigger-fun" class="pop-text" data-pop-media="fun" type="submit" value="fun"> FUN </button>
+			<button id="trigger-fun" class="pop-text" data-pop-media="fun" type="submit" value="fun" formaction="fun.php" > FUN </button>
 
 			<button id="trigger-chill" class="pop-text" data-pop-media="chill" type="submit" value="chill"> CHILL </button>
 

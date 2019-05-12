@@ -32,11 +32,20 @@
 			</ul>
 			</div>
 			<div id="php_content">
+				<form method="GET" action="createPlaylist.php">
 				<div id="titre">
 					<?php
 					require('test.php');
 					?>
 				</div>
+
+				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
+
+<button id="buttonplaylist" type="submit"  name="submit" value="Submit">CREATE YOUR PLAYLIST</button>
+				</form>
+			</div>
+
+				</form>
 			</div>
 		</div>
 
@@ -62,6 +71,7 @@
 				</ul> 
 			</div>-->
 		</div>
+		<div class="space" style="height: 300px"></div>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|IBM+Plex+Sans:500" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 		<script src="js/blotter.min.js"></script>
