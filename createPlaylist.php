@@ -4,7 +4,7 @@
             <meta charset="utf-8">
             <html lang="en">
             	<link rel="icon" href="./css/images/icon.png">
-	<title>MELE'OHANA</title>
+		<title>MELE'OHANA</title>
             <link rel="stylesheet" type="text/css" href="css/style2.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>

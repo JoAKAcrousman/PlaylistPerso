@@ -3,6 +3,8 @@
      <head>
             <meta charset="utf-8">
             <html lang="en">
+           	<link rel="icon" href="./css/images/icon.png">
+			<title>MELE'OHANA</title>
             <link rel="stylesheet" type="text/css" href="css/style2.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>
@@ -12,11 +14,11 @@
      	<script src="js/selection.js"></script>
      	<!-- TOP -->
 		<main>
-			<div class="content">
+			<div class="content"  class="fun_mood">
 				<div class="content__img-wrap">
-					<div class="content__img"></div>
-					<div class="content__img"></div>
-					<div class="content__img"></div>
+					<div class="content__img__fun"></div>
+					<div class="content__img__fun"></div>
+					<div class="content__img__fun"></div>
 				</div>
 				<div class="content__text"><span class="content__text-inner">Funny playlist</span></div>
 			</div>
@@ -41,13 +43,15 @@
 
 				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
 
-<button id="buttonplaylist" type="submit"  name="submit" value="Submit">CREATE YOUR PLAYLIST</button>
+<button id="buttonplaylist" type="submit"  name="submit" value="Submit">👉CREATE YOUR PLAYLIST👈</button>
 				</form>
 			</div>
 
 				</form>
 			</div>
 		</div>
+
+<a id="buttonback" href="index.php">👈 or CHANGE YOUR MOOD</a>
 
 		<!-- FOOTER -->
 		<div id="control">
