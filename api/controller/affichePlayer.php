@@ -1,5 +1,5 @@
 <?php
-require_once "api/MyPDO.elisaciaks9.include.php";
+require_once "../data/MyPDO.elisaciaks9.include.php";
 
 //supervariable $_GET
 $title = $_GET['title'];

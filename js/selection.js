@@ -30,7 +30,7 @@ function affiche_playerAudio(musique){
 			document.getElementById("control").innerHTML = xhr.responseText;
 		}
 	}
-	xhr.open("GET","ajax.php?"+param,true);
+	xhr.open("GET","./api/controller/affichePlayer.php?"+param,true);
 	xhr.send(null);
 }
 
@@ -48,7 +48,7 @@ Document.prototype.ready = callback => {
 
 //affichage des données
 document.ready( () => {
-	fetch("./test.php") 
+	fetch("./api/controller/afficheFunPlaylist.php") 
 		.then( response => response.json() )
 		.then( data => {
 			let titre = document.getElementById('titre');
@@ -79,35 +79,51 @@ document.ready( () => {
 });
 
 
+// var checkedValue = [];
+// var inputElements = document.getElementsByClassName('inputElements');
+// for(var i=0; inputElements[i]; ++i){
+//       if(inputElements[i].checked){
+//            checkedValue[i] = inputElements[i].value;
+//            break;
+//       }
+// }
 
-var checkedValue[]; 
-var inputElements = document.getElementsByClassName('inputElements');
-for(var i=0; inputElements[i]; ++i){
+
+
+
+document.getElementById("buttonplaylist").onclick = event => {
+	event.preventDefault();
+
+
+	var checkedValue = [];
+	var inputElements = document.getElementsByClassName('inputElements');
+	for(var i=1; inputElements[i]; ++i){
       if(inputElements[i].checked){
-           checkedValue[i] = inputElements[i].value;
-           break;
+           checkedValue.push(inputElements[i].value);
       }
+
+              //console.log(checkedValue);
 }
 
-
-
-
-let formplaylist = document.getElementById('formplaylist');
-formplaylist.onsubmit= function(checkedValue) {
-
-var xhr = getXhr()
-
-	// On défini ce qu'on va faire quand on aura la réponse
-	xhr.onreadystatechange = function(){
-		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
-		if(xhr.readyState == 4 && xhr.status == 200){
-			document.getElementById("myplaylist_content").innerHTML = xhr.responseText;
-		}
-	}
-	xhr.open("POST","createTheplaylist.php?"+checkedValue,true);
-	xhr.send(null);
-
+console.log(checkedValue);
 }
+
+// let formplaylist = document.getElementById('formplaylist');
+// formplaylist.addEventListener('submit', function(evt,checkedValue) {
+// evt.preventDefault();
+// var xhr = getXhr()
+
+// 	// On défini ce qu'on va faire quand on aura la réponse
+// 	xhr.onreadystatechange = function(){
+// 		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
+// 		if(xhr.readyState == 4 && xhr.status == 200){
+// 			document.getElementById("myplaylist_content").innerHTML = xhr.responseText;
+// 		}
+// 	}
+// 	xhr.open("POST","api/controller/createTheplaylist.php?"+checkedValue,true);
+// 	xhr.send(null);
+
+// });
 
 
 
