@@ -27,7 +27,7 @@
 				</div>
 
 				
-				<div class="content__text"><span class="content__text-inner">
+				<div class="content__text"><span id="nom_playlist_inner" class="content__text-inner">
 <?php
 
 if (isset($_GET['nom_playlist'])&&(!empty($_GET['nom_playlist']))){

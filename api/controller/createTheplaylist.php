@@ -16,7 +16,8 @@ include_once ";./data/MyPDO.elisaciaks9.include.php";
 // response status
 http_response_code(200);
 
-$musiques = array();
+
+
 
 
 
@@ -36,27 +37,18 @@ $musiques = array();
 
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	
-
-	INSERT nom_titre, Titre.id_titre, nom_artiste, nom_album
-	FROM `Titre`, `Mood`, `link_titre_mood`, `Artiste`, `link_titre_artiste`,`Album`,`link_titre_album`
-	WHERE Titre.id_titre = link_titre_album.id_titre
-	AND Album.id_album = link_titre_album.id_album
-	AND Titre.id_titre = link_titre_artiste.id_titre
-	AND Artiste.id_artiste = link_titre_artiste.id_artiste
-	AND Mood.id_mood = link_titre_mood.id_mood
-	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun' 
+	INSERT INTO Playlist (nom_playlist) 
+	VALUES (:nom_playlist)
 SQL
 );
 
+$stmt->bindParam('nom_playlist',$nom_playlist);
 $stmt->execute();
 
-while (($row = $stmt->fetch()) !== false) {
-	$musique = array(
-		 "titre" => $row['nom_titre'], "artiste" => $row['nom_artiste'], "album" => $row['nom_album'], "id" => $row['id_titre']);
-	$musiques[] = $musique;
-}
+$resp = array(
+		 "nom_playlist" => $row['nom_playlist']);
 
-echo json_encode($musiques);
+echo json_encode($resp);
+exit();
 
 ?>

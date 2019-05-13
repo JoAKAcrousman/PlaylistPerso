@@ -42,7 +42,7 @@
 
 				</div>
 
-				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
+				<input  id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist" required>
 
 <button id="buttonplaylist" type="submit"  name="submit" value="Submit">👉CREATE YOUR PLAYLIST👈</button>
 				</form>

@@ -94,7 +94,7 @@ document.ready( () => {
 document.getElementById("buttonplaylist").onclick = event => {
 	event.preventDefault();
 
-
+	let params = {}
 	var checkedValue = [];
 	var inputElements = document.getElementsByClassName('inputElements');
 	for(var i=1; inputElements[i]; ++i){
@@ -104,8 +104,31 @@ document.getElementById("buttonplaylist").onclick = event => {
 
               //console.log(checkedValue);
 }
-
 console.log(checkedValue);
+params['id'] = checkedValue;
+
+
+const form = document.querySelector('#formplaylist');
+
+if (form.nom_playlist.value) 
+	params['nom_playlist'] =  form.nom_playlist.value;
+
+var body = JSON.stringify(params);
+
+console.log(params);
+var xhr = getXhr()
+
+	// On défini ce qu'on va faire quand on aura la réponse
+	xhr.onreadystatechange = function(){
+		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
+		if(xhr.readyState == 4 && xhr.status == 200){
+			document.getElementById("nom_playlist_inner").innerHTML = xhr.responseText;
+		}
+	}
+	xhr.open("POST","api/controller/createTheplaylist.php?"+checkedValue,true);
+	xhr.send(null);
+
+
 }
 
 // let formplaylist = document.getElementById('formplaylist');
