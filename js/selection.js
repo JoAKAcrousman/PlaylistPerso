@@ -56,34 +56,61 @@ document.ready( () => {
 
 
 
-				let label = document.createElement("label");
-				// label.htmlFor = "input-radio-" + musique.toLowerCase();
-				label.innerHTML = musique;
+				let div = document.createElement("div");
+				// div.htmlFor = "input-radio-" + musique.toLowerCase();
+				div.innerHTML = "<span id='musique_titre'>" + musique.titre + "</span>" + "<span id='musique_artiste'>" + musique.artiste + "</span>" + "<span id='musique_album'>" + musique.album + "</span>";
 
 				let input = document.createElement("input");
 				input.type = "checkbox";
-				input.value = musique;
+				input.value = musique.id;
 				input.name = "titre[]";
-
-				//création du checkbox
-				/*let radio = document.createElement("input");
-				radio.type = "checkbox";
-				radio.name = "genre";
-				radio.value = musique;
-				radio.id = "input-radio-" + musique.toLowerCase();*/
+				input.className ="inputElements";
 				
 				let li  = document.createElement("li");
-				label.onclick=function(){affiche_playerAudio(musique);}
+				div.onclick=function(){affiche_playerAudio(musique);}
 
-				//li.appendChild(radio);
-				// li.appendChild(label);
 				titre.appendChild(li);
 				li.appendChild(input);
-				li.appendChild(label);
+				li.appendChild(div);
 
-				//compter le nombre de li
-				//var lenghtli = document.querySelectorAll("#titre li").length;
 			});
 		})
 		.catch(error => { console.log(error) });
 });
+
+
+
+var checkedValue[]; 
+var inputElements = document.getElementsByClassName('inputElements');
+for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+           checkedValue[i] = inputElements[i].value;
+           break;
+      }
+}
+
+
+
+
+let formplaylist = document.getElementById('formplaylist');
+formplaylist.onsubmit= function(checkedValue) {
+
+var xhr = getXhr()
+
+	// On défini ce qu'on va faire quand on aura la réponse
+	xhr.onreadystatechange = function(){
+		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
+		if(xhr.readyState == 4 && xhr.status == 200){
+			document.getElementById("myplaylist_content").innerHTML = xhr.responseText;
+		}
+	}
+	xhr.open("POST","createTheplaylist.php?"+checkedValue,true);
+	xhr.send(null);
+
+}
+
+
+
+
+
+

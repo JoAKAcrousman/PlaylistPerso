@@ -26,7 +26,7 @@
 					<div class="content__img"></div>
 				</div>
 
-
+				
 				<div class="content__text"><span class="content__text-inner">
 <?php
 
@@ -50,7 +50,7 @@ echo $nom_playlist;
 	
 
 </h1>
-<div id="content" class="myplaylist-content">
+<div id="content">
 	<div id="criteres">
 			<ul>
 				<li> TITRE </li>
@@ -58,29 +58,16 @@ echo $nom_playlist;
 				<li> ALBUM </li>
 			</ul>
 			</div>
-		<?php
 
-// require_once '../classes/class.Playlist.php';
-
-// if (isset($_POST ["submit"])){
-//     $playlist = new Playlist();
-//     $playlist->setNomPlaylist($_POST["nom_playlist"]);
+			<div id="myplaylist_content" class="myplaylist-content">
+		
 
 
-//     $sql = "INSERT INTO Playlist (nom_playlist) VALUES (?)";
-
-//     $requete = $pdo->prepare($sql);
-//     $requete->bindValue(1, $_POST["nom_produit"]);
 
 
-//     $requete->execute();
-
-//     exit();
 
 
-// }
-
-
+<!--
 
 require_once "api/MyPDO.elisaciaks9.include.php";
 // require_once ("api/classes/class.Titre.php");
@@ -95,7 +82,9 @@ if ( isset($_GET['titre'])&& !empty($_GET['titre']) ) {
 	foreach ($_GET['titre'] as $titre) {
 			echo " <div class='myplaylist_row'> ";
 			//AFFICHE TITRE
-			echo " <div> $titre </div>";
+			echo " <li>
+			 <label> $titre <label> 
+			</li>";
 
 
 			//REQUETE ARTISTE
@@ -112,7 +101,9 @@ SQL
 
 	while (($row = $stmt->fetch()) !== false) {
 		//AFFICHE ARTISTE
-		echo "<div> {$row['nom_artiste']} </div>";
+		echo "<li> 
+		<label>{$row['nom_artiste']}</label> 
+		</li>";
 
 	}
 
@@ -130,7 +121,9 @@ SQL
 
 	while (($row = $stmt->fetch()) !== false) {
 		//AFFICHE ALBUM
-		echo "<div> {$row['nom_album']} </div>";
+		echo "<li>
+		<label>{$row['nom_album']} </label>
+		</li>";
 
 	}
 	echo " </div> ";
@@ -143,6 +136,10 @@ SQL
 else echo "Aucune musiques choisies :-'(";
 
 ?>
+
+-->
+
+</div>
 </div>
 <!-- FOOTER -->
 		<div id="control">
