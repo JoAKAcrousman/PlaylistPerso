@@ -125,10 +125,10 @@ console.log(params);
 	xhr.onreadystatechange = function(){
 		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
 		if(xhr.readyState == 4 && xhr.status == 200){
-			document.getElementById("nom_playlist_inner").innerHTML = xhr.responseText;
+			document.getElementById("control").innerHTML = xhr.responseText;
 		}
 	}
-	
+
 	xhr.open("POST","api/controller/createTheplaylist.php",true);
 	xhr.send("id="+param);
 
