@@ -11,7 +11,7 @@ if ($method !== 'post') {
 }
 
 // include data
-include_once ";./data/MyPDO.elisaciaks9.include.php";
+require_once "../data/MyPDO.elisaciaks9.include.php";
 
 // response status
 http_response_code(200);
