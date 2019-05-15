@@ -275,13 +275,13 @@ border-radius: 20px;
 
 #titre #musique_artiste {
     position: absolute;
-    left: 300px;
+    left: 30vw;
     top: 0;
 }
 
 #titre #musique_album {
     position: absolute;
-    left: 500px;
+    left: 50vw;
     top: 0;
 }
 

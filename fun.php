@@ -14,7 +14,7 @@
      	
      	<!-- TOP -->
 		<main>
-			<div class="content">
+			<div class="content content_fun">
 				<div class="content__img-wrap">
 					<div class="content__img"></div>
 					<div class="content__img"></div>
