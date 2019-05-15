@@ -206,16 +206,7 @@ li label{
     color: #fff;
 }
 
-#titre input {
-/*        position: absolute;
-    top: 15px;
-    left: -40px;*/
-    display: none;
-}
 
-#titre li:nth-child(3n+1) input, #titre li:first-child input {
-    display: initial;
-}
 
 /*#titre li {
         position: relative;
@@ -264,6 +255,35 @@ border-radius: 20px;
     left: 40%;
 }
 
+#titre, form {
+    width: 100%;
+}
+
+#titre li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+#titre #musique_titre {
+    position: absolute;
+    left: 100px;
+    top: 0px;
+}
+
+#titre #musique_artiste {
+    position: absolute;
+    left: 300px;
+    top: 0;
+}
+
+#titre #musique_album {
+    position: absolute;
+    left: 500px;
+    top: 0;
+}
 
 /*------------------------------------*\
   #RESPONSIVE

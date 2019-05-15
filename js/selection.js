@@ -117,8 +117,7 @@ if (form.nom_playlist.value)
 			document.getElementById("control").innerHTML = xhr.responseText;
 		}
 	}
-	
-	xhr.open("POST","api/controller/createTheplaylist.php",true);
+	xhr.open("POST","./api/controller/createTheplaylist.php",true);
 	xhr.send(body);
 
 

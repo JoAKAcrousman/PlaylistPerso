@@ -3,13 +3,15 @@
      <head>
             <meta charset="utf-8">
             <html lang="en">
+            <link rel="icon" href="./css/images/icon.png">
+			<title>MELE'OHANA</title>
             <link rel="stylesheet" type="text/css" href="css/style2.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
      </head>
      <body>
-     	<script src="js/selection.js"></script>
+     	
      	<!-- TOP -->
 		<main>
 			<div class="content">
@@ -32,7 +34,7 @@
 			</ul>
 			</div>
 			<div id="php_content">
-				<form method="GET" action="createPlaylist.php">
+				<form  id="formplaylist" action="createPlaylist.php">
 				<div id="titre">
 				
 				</div>
@@ -71,6 +73,7 @@
 		</div>
 		<div class="space" style="height: 300px"></div>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|IBM+Plex+Sans:500" rel="stylesheet">
+		<script src="js/selection.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 		<script src="js/blotter.min.js"></script>
         <script src="js/materials/liquidDistortMaterial.js"></script>
