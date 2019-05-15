@@ -53,9 +53,6 @@ document.ready( () => {
 		.then( data => {
 			let titre = document.getElementById('titre');
 			data.forEach( musique => {
-
-
-
 				let div = document.createElement("div");
 				// div.htmlFor = "input-radio-" + musique.toLowerCase();
 				div.innerHTML = "<span id='musique_titre'>" + musique.titre + "</span>" + "<span id='musique_artiste'>" + musique.artiste + "</span>" + "<span id='musique_album'>" + musique.album + "</span>";
@@ -93,7 +90,6 @@ document.ready( () => {
 
 document.getElementById("buttonplaylist").onclick = event => {
 	event.preventDefault();
-
 	let params = {}
 	var checkedValue = [];
 	var inputElements = document.getElementsByClassName('inputElements');
@@ -101,25 +97,18 @@ document.getElementById("buttonplaylist").onclick = event => {
       if(inputElements[i].checked){
            checkedValue.push(inputElements[i].value);
       }
-
-              //console.log(checkedValue);
 }
-console.log(checkedValue);
 params['id'] = checkedValue;
 
 
 const form = document.querySelector('#formplaylist');
-
 if (form.nom_playlist.value) 
 	params['nom_playlist'] =  form.nom_playlist.value;
 
-var body = JSON.stringify(params);
-
-console.log(params);
+	var body = JSON.stringify(params);
+	//console.log(body);
 
 	var xhr = getXhr()
-
-	var param = checkedValue;
 
 	// On défini ce qu'on va faire quand on aura la réponse
 	xhr.onreadystatechange = function(){
@@ -128,9 +117,8 @@ console.log(params);
 			document.getElementById("control").innerHTML = xhr.responseText;
 		}
 	}
-
 	xhr.open("POST","api/controller/createTheplaylist.php",true);
-	xhr.send("id="+param);
+	xhr.send(body);
 
 
 }
