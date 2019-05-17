@@ -65,7 +65,7 @@ else{
 	//$id_titre = $serialize;
 
 	//prb ici parce que le tableau est converti en string
-	$id_titre = $json_obj['id'];
+	$id_titre_list = $json_obj['id'];
 	$nom_playlist = $json_obj['nom_playlist'];
 
 //echo "$id_titre";
@@ -101,17 +101,18 @@ SQL
 //Lien entre les titres et la playlist//
 ////////////////////////////////////////
 
-foreach($id_titre as $value){
+foreach($id_titre_list as $value){
 
-$valueint = (int)$value;
+$id_titre = (int)$value;
 
-echo $valueint . "<br>";
+echo $id_titre . "<br>";
     $stmt2 = MyPDO::getInstance()->prepare(<<<SQL
         INSERT INTO link_titre_playlist(id_titre, id_playlist)
-		VALUES (:valueint, :id_playlist)
+		VALUES (:id_titre, :id_playlist)
 SQL
     );
-    $stmt2->execute(array("valueint" => $id_titre, "id_playlist" => $id_playlist));
+
+    $stmt2->execute(array("id_titre" => $id_titre, "id_playlist" => $id_playlist));
     
 }
 	 exit();
