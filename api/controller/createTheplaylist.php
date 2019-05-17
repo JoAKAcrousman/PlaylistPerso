@@ -68,6 +68,12 @@ else{
 	$id_titre = $json_obj['id'];
 	$nom_playlist = $json_obj['nom_playlist'];
 
+//echo "$id_titre";
+
+// foreach($id_titre as $value){
+//     echo $value . "<br>";
+// }
+
 
 ////////////////////////////////////////
 ////////Création de la playlist/////////
@@ -95,19 +101,36 @@ SQL
 //Lien entre les titres et la playlist//
 ////////////////////////////////////////
 
-	$stmt = MyPDO::getInstance()->prepare(<<<SQL
-	INSERT INTO link_titre_playlist(id_titre, id_playlist)
-	VALUES (:id_titre, :id_playlist)
-SQL
-);
-	
-	$stmt->bindParam(':id_titre', $id_titre);
-	$stmt->bindParam(':id_playlist', $id_playlist);
-	$stmt->execute();
+foreach($id_titre as $value){
 
-	$resp2 = array("id_titre" => $id_titre, "id_playlist" => $id_playlist);
-	//echo json_encode($resp2);
-	exit();
+$valueint = (int)$value;
+
+echo $valueint . "<br>";
+    $stmt2 = MyPDO::getInstance()->prepare(<<<SQL
+        INSERT INTO link_titre_playlist(id_titre, id_playlist)
+		VALUES (:valueint, :id_playlist)
+SQL
+    );
+    $stmt2->execute(array("valueint" => $id_titre, "id_playlist" => $id_playlist));
+    
+}
+	 exit();
+
+
+
+// 	$stmt = MyPDO::getInstance()->prepare(<<<SQL
+// 	INSERT INTO link_titre_playlist(id_titre, id_playlist)
+// 	VALUES (:id_titre, :id_playlist)
+// SQL
+// );
+	
+// 	$stmt->bindParam(':id_titre', $id_titre);
+// 	$stmt->bindParam(':id_playlist', $id_playlist);
+// 	$stmt->execute();
+
+// 	$resp2 = array("id_titre" => $id_titre, "id_playlist" => $id_playlist);
+// 	//echo json_encode($resp2);
+// 	exit();
 
 ////////////////////////////////////////
 ////////////////////////////////////////
