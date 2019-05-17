@@ -1,33 +1,46 @@
 <?php
-require_once "../data/MyPDO.elisaciaks9.include.php";
 
-//supervariable $_GET
-$title = $_GET['title'];
+header("Content-Type: application/json; charset=UTF-8");
 
-//REQUETE DIFFERENTE POUR CHAQUE TITRE
+// check HTTP method
+$method = strtolower($_SERVER['REQUEST_METHOD']);
+
+if ($method !== 'get') {
+	http_response_code(405);
+	echo json_encode(array('message' => 'This method is not allowed.'));
+	exit();
+}
+
+// include data
+include_once "../data/MyPDO.elisaciaks9.include.php";
+
+// response status
+http_response_code(200);
+
+if(!empty($_GET['id'])){
+    $id_publi = $_GET['id'];
+}
+else {
+    echo json_encode(array("error" => "Missing id publi"));
+	http_response_code(422);
+}
+
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	SELECT *
-	FROM `Titre`, `Mood`, `link_titre_mood`
-	WHERE Mood.id_mood = link_titre_mood.id_mood
-	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun'
-	AND Titre.nom_titre = '$title'
+    FROM `Titre`
+    WHERE id_titre = :id_publi;
 SQL
 );
-
+$stmt->bindParam(':id_publi',$id_publi);
 $stmt->execute();
 
-while (($row = $stmt->fetch()) !== false) {
-	echo "<div id=informations>";
-	echo "<div id=affiche_info>";
-	echo "<img src=".$row['img_titre'].">";
-	echo "<p> {$row['nom_titre']} </p>";
-	echo '<audio controls="controls" preload="none">'
-                    .'<source src="' . $row['mp3_titre'] . '" type="audio/mp3" />'
-                    .'Votre navigateur n\'est pas compatible'
-                    .'</audio>';     
-	echo "</div>";
-	echo "</div>";
+$publi = [];
+
+if(($row = $stmt->fetch(PDO::FETCH_ASSOC))) {
+	array_push($publi, $row);
 }
+
+echo json_encode($publi, JSON_UNESCAPED_UNICODE);
+
 
 ?>

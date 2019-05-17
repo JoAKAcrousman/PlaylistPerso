@@ -1,5 +1,6 @@
 <?php
-//header("Content-Type: application/json; charset=UTF-8");
+
+header("Content-Type: application/json; charset=UTF-8");
 
 // check HTTP method
 $method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -39,6 +40,6 @@ while (($row = $stmt->fetch()) !== false) {
 	$musiques[] = $musique;
 }
 
-echo json_encode($musiques);
+echo json_encode($musiques, JSON_UNESCAPED_UNICODE);
 
 ?>

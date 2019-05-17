@@ -185,6 +185,10 @@ li label{
     padding: 12px 0;
 }
 
+#image_titre{
+    width:200px;
+}
+
 .button
 {
     width: 26px;

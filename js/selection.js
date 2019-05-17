@@ -1,3 +1,75 @@
+// document ready in ES6
+Document.prototype.ready = callback => {
+	if(callback && typeof callback === 'function') {
+		document.addEventListener("DOMContentLoaded", () =>  {
+			if(document.readyState === "interactive" || document.readyState === "complete") {
+				return callback();
+			}
+		});
+	}
+};
+
+// permet d'afficher toutes les musiques
+document.ready( () => {
+	fetch("./api/controller/afficheFunPlaylist.php") 
+		.then( response => response.json() )
+		.then( data => {
+			let titre = document.getElementById('titre');
+			data.forEach( musique => {
+				let div = document.createElement("div");
+				// div.htmlFor = "input-radio-" + musique.toLowerCase();
+				div.innerHTML = "<span id='musique_titre'>" + musique.titre + "</span>" + "<span id='musique_artiste'>" + musique.artiste + "</span>" + "<span id='musique_album'>" + musique.album + "</span>";
+
+				let input = document.createElement("input");
+				input.type = "checkbox";
+				input.value = musique.id;
+				input.name = "titre[]";
+				input.className ="inputElements";
+				
+				let li  = document.createElement("li");
+				div.onclick=function(){affichePlayerAudio(musique);}
+
+				titre.appendChild(li);
+				li.appendChild(input);
+				li.appendChild(div);
+
+			});
+		})
+		.catch(error => { console.log(error) });
+});
+
+
+// permet d'afficher le player audio lorsque l'on clique sur une musique
+function affichePlayerAudio(musique){
+	fetch("./api/controller/affichePlayer.php?id="+musique.id) 
+		.then( response => response.json() )
+		.then( text => {
+			let titre = document.getElementById('control');
+			text.forEach( player => {
+				let div = document.createElement("div");
+				div.innerHTML = "<img src=" + player.img_titre + " id=image_titre>" + "<span id='nom_titre'>" + player.nom_titre + "</span>" + "<audio controls=controls> <source src=" + player.mp3_titre + "> <type=audio/mp3/>";
+				console.log(player);
+				titre.appendChild(div);
+			});
+		})
+		.catch(error => {console.log(error)});
+};
+
+//permet de savoir quels sont les checkboxs cochées
+document.getElementById("buttonplaylist").onclick = event => {
+	event.preventDefault();
+	let params = {}
+	var checkedValue = [];
+	var inputElements = document.getElementsByClassName('inputElements');
+	for(var i=1; inputElements[i]; ++i){
+      	if(inputElements[i].checked){
+           checkedValue.push(inputElements[i].value);
+    }
+}
+params['id'] = checkedValue;
+
+
+
 function getXhr(){
     var xhr = null; 
 	if(window.XMLHttpRequest) // Firefox et autres
@@ -17,99 +89,12 @@ function getXhr(){
     return xhr
 }
 
-
-//Méthode qui sera appelée sur le click du bouton
-function affiche_playerAudio(musique){
-	var xhr = getXhr()
-	//var nom_titre = document.getElementById('musique1');
-	var param = "title="+musique;
-	// On défini ce qu'on va faire quand on aura la réponse
-	xhr.onreadystatechange = function(){
-		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
-		if(xhr.readyState == 4 && xhr.status == 200){
-			document.getElementById("control").innerHTML = xhr.responseText;
-		}
-	}
-	xhr.open("GET","./api/controller/affichePlayer.php?"+param,true);
-	xhr.send(null);
-}
-
-
-// document ready in ES6
-Document.prototype.ready = callback => {
-	if(callback && typeof callback === 'function') {
-		document.addEventListener("DOMContentLoaded", () =>  {
-			if(document.readyState === "interactive" || document.readyState === "complete") {
-				return callback();
-			}
-		});
-	}
-};
-
-//affichage des données
-document.ready( () => {
-	fetch("./api/controller/afficheFunPlaylist.php") 
-		.then( response => response.json() )
-		.then( data => {
-			let titre = document.getElementById('titre');
-			data.forEach( musique => {
-				let div = document.createElement("div");
-				// div.htmlFor = "input-radio-" + musique.toLowerCase();
-				div.innerHTML = "<span id='musique_titre'>" + musique.titre + "</span>" + "<span id='musique_artiste'>" + musique.artiste + "</span>" + "<span id='musique_album'>" + musique.album + "</span>";
-
-				let input = document.createElement("input");
-				input.type = "checkbox";
-				input.value = musique.id;
-				input.name = "titre[]";
-				input.className ="inputElements";
-				
-				let li  = document.createElement("li");
-				div.onclick=function(){affiche_playerAudio(musique);}
-
-				titre.appendChild(li);
-				li.appendChild(input);
-				li.appendChild(div);
-
-			});
-		})
-		.catch(error => { console.log(error) });
-});
-
-
-// var checkedValue = [];
-// var inputElements = document.getElementsByClassName('inputElements');
-// for(var i=0; inputElements[i]; ++i){
-//       if(inputElements[i].checked){
-//            checkedValue[i] = inputElements[i].value;
-//            break;
-//       }
-// }
-
-
-
-
-document.getElementById("buttonplaylist").onclick = event => {
-	event.preventDefault();
-	let params = {}
-	var checkedValue = [];
-	var inputElements = document.getElementsByClassName('inputElements');
-	for(var i=1; inputElements[i]; ++i){
-      if(inputElements[i].checked){
-           checkedValue.push(inputElements[i].value);
-      }
-}
-params['id'] = checkedValue;
-
-
+// permet de créer une playlist
 const form = document.querySelector('#formplaylist');
 if (form.nom_playlist.value) 
 	params['nom_playlist'] =  form.nom_playlist.value;
-
 	var body = JSON.stringify(params);
-	//console.log(body);
-
 	var xhr = getXhr()
-
 	// On défini ce qu'on va faire quand on aura la réponse
 	xhr.onreadystatechange = function(){
 		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
@@ -119,27 +104,7 @@ if (form.nom_playlist.value)
 	}
 	xhr.open("POST","./api/controller/createTheplaylist.php",true);
 	xhr.send(body);
-
-
 }
-
-// let formplaylist = document.getElementById('formplaylist');
-// formplaylist.addEventListener('submit', function(evt,checkedValue) {
-// evt.preventDefault();
-// var xhr = getXhr()
-
-// 	// On défini ce qu'on va faire quand on aura la réponse
-// 	xhr.onreadystatechange = function(){
-// 		// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
-// 		if(xhr.readyState == 4 && xhr.status == 200){
-// 			document.getElementById("myplaylist_content").innerHTML = xhr.responseText;
-// 		}
-// 	}
-// 	xhr.open("POST","api/controller/createTheplaylist.php?"+checkedValue,true);
-// 	xhr.send(null);
-
-// });
-
 
 
 
