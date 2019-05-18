@@ -24,7 +24,7 @@ $id_playlist = $_GET['id'];
 //echo $id_playlist;
 
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
-	SELECT nom_titre, Titre.id_titre, nom_artiste, nom_album
+	SELECT DISTINCT nom_titre, Titre.id_titre, nom_artiste, nom_album
 	FROM `Titre`, `Playlist`, `link_titre_playlist`, `Artiste`, `link_titre_artiste`,`Album`,`link_titre_album`
 	WHERE Titre.id_titre = link_titre_album.id_titre
 	AND Album.id_album = link_titre_album.id_album

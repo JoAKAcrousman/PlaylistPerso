@@ -23,7 +23,7 @@ http_response_code(200);
 $musiques = array();
 
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
-SELECT *
+SELECT DISTINCT *
 FROM `Playlist`, `Titre`, `link_titre_playlist`,`Album`,`link_titre_album`, `Artiste`, `link_titre_artiste`
 WHERE Playlist.id_playlist = link_titre_playlist.id_playlist
 AND Titre.id_titre = link_titre_playlist.id_titre
