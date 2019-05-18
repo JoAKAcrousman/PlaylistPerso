@@ -8,11 +8,11 @@
 }
 
 body{
-	width: 100%;
-	height: 100%;
-	margin:0px;
-	padding:0px;
-	background-color:#212D3A;
+    width: 100%;
+    height: 100%;
+    margin:0px;
+    padding:0px;
+    background-color:#212D3A;
 }
 
 body:after{
@@ -32,6 +32,14 @@ body:after{
 
 
 /* CONTENT */
+h1.new_name {
+        font-family: serif;
+    font-weight: 500;
+    font-size: 8em;
+    color: white;
+    position: absolute;
+}
+
 #content{
     width:70%;
     margin:auto;
@@ -110,14 +118,14 @@ li label{
 
 
 /*#control{
-	background-color:#31373E;
-	margin:0px;
-	padding:0px;
+    background-color:#31373E;
+    margin:0px;
+    padding:0px;
 }
 
 #control img{
-	width:20px;
-	text-align: center;
+    width:20px;
+    text-align: center;
 }*/
 
 #control
@@ -259,7 +267,7 @@ border-radius: 20px;
     left: 40%;
 }
 
-#titre, form {
+#titre, #formplaylist {
     width: 100%;
 }
 

@@ -45,7 +45,6 @@ $nom_playlist = $json_obj['nom_playlist'];
 //     echo $value . "<br>";
 // }
 
-
 // Création de la playlist
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	INSERT INTO Playlist(nom_playlist)
@@ -59,6 +58,7 @@ $stmt->execute();
 //retourne l'identifiant de la derniere valeur insérée
 $id_playlist = MyPDO::getInstance()->lastInsertId();
 
+echo $id_playlist;
 $resp = array("id_playlist" => $id_playlist, "nom_playlist" => $nom_playlist);
 
 
@@ -66,7 +66,6 @@ $resp = array("id_playlist" => $id_playlist, "nom_playlist" => $nom_playlist);
 // Création du lien entre les titres et la playlist
 foreach($id_titre_list as $value){
 	$id_titre = (int)$value;
-	echo $id_titre . "<br>";
     $stmt2 = MyPDO::getInstance()->prepare(<<<SQL
         INSERT INTO link_titre_playlist(id_titre, id_playlist)
 		VALUES (:id_titre, :id_playlist)
