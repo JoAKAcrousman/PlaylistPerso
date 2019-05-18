@@ -45,11 +45,11 @@ function affichePlayerAudio(musique){
 	fetch("./api/controller/affichePlayer.php?id="+musique.id) 
 		.then( response => response.json() )
 		.then( text => {
+			document.getElementById('control').innerHTML = "";
 			let titre = document.getElementById('control');
 			text.forEach( player => {
 				let div = document.createElement("div");
 				div.innerHTML = "<img src=" + player.img_titre + " id=image_titre>" + "<span id='nom_titre'>" + player.nom_titre + "</span>" + "<audio controls=controls> <source src=" + player.mp3_titre + "> <type=audio/mp3/>";
-				console.log(player);
 				titre.appendChild(div);
 			});
 		})

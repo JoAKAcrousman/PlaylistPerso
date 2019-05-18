@@ -9,4 +9,4 @@ MyPDO::setConfiguration('mysql:host=elisaciaks9.mysql.db;dbname=elisaciaks9;char
 
 
 // // //localhost
-// MyPDO::setConfiguration('mysql:host=localhost;dbname=elisaciaks9;charset=utf8', 'root', 'root');
+//MyPDO::setConfiguration('mysql:host=localhost;dbname=elisaciaks9;charset=utf8', 'root', 'root');
