@@ -195,5 +195,8 @@ ul {
     opacity: 0.4;
 }
 
-
+audio{
+    width:250px;
+    margin-top: 20px;
+}
 

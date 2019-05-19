@@ -35,41 +35,20 @@
 			</div>
 			<div id="php_content">
 				<form  id="formplaylist" action="">
-				<div id="titre">
-				
-				</div>
-
-				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
-
-<input id="buttonplaylist" type="button" name="submit" value="CREATE YOUR PLAYLIST"></input>
+					<div id="titre">
+					
+					</div>
+					<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
+					<input id="buttonplaylist" type="button" name="submit" value="CREATE YOUR PLAYLIST"></input>
 				</form>
 			</div>
-
 				</form>
 			</div>
 		</div>
 
 		<!-- FOOTER -->
 		<div id="control">
-			<!--<div id="player_control">
-				<ul>
-					<li>
-						<div class="button" id="play-previous">
-							<i class="fas fa-backward"></i>
-				        </div>
-			    	</li>
-					<li>
-					    <div class="button" id="play-pause-button">
-					        <i class="fas fa-play"></i>
-				       </div>
-				   </li>
-				   <li>
-				        <div class="button" id="play-next">
-						    <i class="fas fa-forward"></i>
-					   </div>
-					</li>
-				</ul> 
-			</div>-->
+			
 		</div>
 		<div class="space" style="height: 300px"></div>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|IBM+Plex+Sans:500" rel="stylesheet">

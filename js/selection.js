@@ -176,9 +176,6 @@ if (form.nom_playlist.value)
 // 		.catch(error => { console.log(error) });
 
 
-
-
-
 }
 
 

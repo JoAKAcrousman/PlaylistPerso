@@ -140,3 +140,38 @@
     init();
 
 })(window);
+
+//affiche les playlists mystères
+document.onkeypress=function(e){
+    e=e||window.event;
+    var key=e.which?e.which:event.keyCode;
+    if (key==63){
+        fetch("./api/controller/afficheProjetSon.php") 
+        .then( response => response.json() )
+        .then( text => {
+            document.getElementById('trigger-mystery').innerHTML = "";
+            let titre = document.getElementById('trigger-mystery');
+            text.forEach( player => {
+                let div = document.createElement("div");
+                div.innerHTML = "<span id='nom_titre'>" + player.nom_titre + "</span>" + "<audio controls=controls> <source src=" + player.mp3_titre + "> <type=audio/mp3/>";
+                titre.appendChild(div);
+            });
+        })
+        .catch(error => {console.log(error)});  
+    } 
+    else alert('Frappe de la touche de code '+key)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
