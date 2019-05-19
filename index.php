@@ -38,6 +38,10 @@
 				<div class="pop-media__overlay"></div>
 			</div>
 
+			<div data-pop-media="creator" class="pop-media" style="background-image: url(css/images/mysterious.gif);">
+				<div class="pop-media__overlay"></div>
+			</div>
+
 		<div id="border">
 			<div id="top"></div>
 			<div id="bottom"></div>
@@ -71,12 +75,19 @@
 
 				<button id="trigger-nostalgic" class="pop-text" data-pop-media="nostalgic" type="submit" value="nostalgic"> NOSTALGIC</button>
 
-				<button id="trigger-creator" class="pop-text" data-pop-media="creator" type="submit" value="creator" formaction="playlistMembre.php"> PLALISTS DES CREATEURS</button>
+			</form>
 
-				<button id="trigger-mystery" class="pop-text" data-pop-media="mystery" type="submit" value="mystery"> TRY "?" TO DISCOVER <br/> SOMETHING</button>
+			<form>
+				
+				<h2>👉 Moooore </h2>
+			
+				<button id="trigger-creator" class="pop-text" data-pop-media="creator" type="submit" value="creator" formaction="playlistMembre.php"> PLAYLISTS DES CREATEURS</button>
+			
+				<button disabled id="trigger-mystery" class="pop-text" data-pop-media="mystery" type="submit" value="mystery"> TRY "?" TO DISCOVER <br/> SOMETHING</button>
 
 			</form>
 		</section>
+
 		<script type='text/javascript' src="js/imagesloaded.pkgd.min.js"></script>
 		<script type='text/javascript' src='js/script.js'></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/14.2.1/smooth-scroll.min.js"></script>

@@ -132,6 +132,20 @@
             t6.resetMedia();
         });
 
+        var t7 = new MediaRevealer($('trigger-creator'));
+        t7.el.addEventListener('mouseenter', function(ev) {
+            clearTimeout(triggertimeout);
+            triggertimeout = setTimeout(function() {
+                t7.positionMedia();
+                t7.mediaEl.style.opacity = 1;
+            }, triggerdelay);
+        });
+        t7.el.addEventListener('mouseleave', function(ev) {
+            clearTimeout(triggertimeout);
+            t7.resetMedia();
+        });
+
+
     }
 
     // setTimeouts 

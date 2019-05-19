@@ -136,6 +136,7 @@ ul {
 
 .select-mood h1, .select-mood h2 {
     margin-left: 30px;    
+    width: 100%;
 }
 
 .select-mood > h1 {
@@ -168,6 +169,7 @@ ul {
     align-items: center;
     width: 90vw;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 /* --------- GIF --------- */

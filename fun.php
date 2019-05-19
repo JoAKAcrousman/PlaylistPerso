@@ -26,6 +26,9 @@
 
      	<!-- CONTENT -->
         <div id="content">
+
+        	<h2>👉 Pick your favorite songs to create your own playlist </h2> 
+
         	<div id="criteres">
 			<ul>
 				<li> TITRE </li>
@@ -38,8 +41,11 @@
 					<div id="titre">
 					
 					</div>
-					<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
-					<input id="buttonplaylist" type="button" name="submit" value="CREATE YOUR PLAYLIST"></input>
+					<input id="nom_playlist" placeholder="👉 GIVE A NAME*" type="text" name="nom_playlist">
+					<input id="buttonplaylist" type="button" name="submit" value="✅ CREATE YOUR PLAYLIST"></input>
+
+					<input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input>
+
 				</form>
 			</div>
 				</form>
