@@ -34,14 +34,14 @@
 			</ul>
 			</div>
 			<div id="php_content">
-				<form  id="formplaylist" action="createPlaylist.php">
+				<form  id="formplaylist" action="">
 				<div id="titre">
 				
 				</div>
 
 				<input id="nom_playlist" placeholder="GIVE A NAME*" type="text" name="nom_playlist">
 
-<button id="buttonplaylist" type="submit"  name="submit" value="Submit">CREATE YOUR PLAYLIST</button>
+<input id="buttonplaylist" type="button" name="submit" value="CREATE YOUR PLAYLIST"></input>
 				</form>
 			</div>
 

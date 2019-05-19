@@ -1,9 +1,9 @@
 /* --------- SET --------- */
 
 body {
-	color: #f9daf6;
-	background-color: #212D3A;
-	font-family: Montserrat,sans serif;
+    color: #f9daf6;
+    background-color: #212D3A;
+    font-family: Montserrat,sans serif;
 }
 
 body:after{
@@ -75,7 +75,7 @@ ul {
 
 
 .one-page{
-	height: 100vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -86,7 +86,7 @@ ul {
 
 
 .title{
-	margin: 0;
+    margin: 0;
     background: #202d3a;
     width: 100%;
     text-align: center;
@@ -99,7 +99,7 @@ ul {
 }
 
 .title>span {
-	font-weight: 300;
+    font-weight: 300;
     letter-spacing: 5px;
     color: #f9daf6;
      -webkit-text-stroke-width: none;
@@ -107,7 +107,7 @@ ul {
 }
 
 .gif-bg{
-	position: absolute;
+    position: absolute;
     z-index: -1;
 }
 
