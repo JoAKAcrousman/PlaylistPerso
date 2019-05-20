@@ -33,8 +33,8 @@ body:after{
 
 
 /* CONTENT */
-h1.new_name {
-        font-family: serif;
+h1#new_name {
+    font-family: serif;
     font-weight: 500;
     font-size: 8em;
     color: white;

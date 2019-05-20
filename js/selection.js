@@ -227,7 +227,7 @@ buttonRemove.onclick = event => {
 				}
 		}
 
-		xhr.open("POST","./api/controller/deletefromPlaylist.php",true);
+		xhr.open("GET","./api/controller/affichePlaylistUser.php?id=161",true);
 		xhr.send(body);
 
 }
