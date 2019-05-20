@@ -8,11 +8,12 @@
 }
 
 body{
-	width: 100%;
-	height: 100%;
-	margin:0px;
-	padding:0px;
-	background-color:#212D3A;
+    width: 100%;
+    height: 100%;
+    margin:0px;
+    padding:0px;
+    background-color:#212D3A;
+    font-family: Futura, 'IBM Plex Sans', Arial, sans-serif;
 }
 
 body:after{
@@ -32,27 +33,38 @@ body:after{
 
 
 /* CONTENT */
+h1#new_name {
+    font-family: serif;
+    font-weight: 500;
+    font-size: 8em;
+    color: white;
+    position: absolute;
+}
+
 #content{
     width:70%;
     margin:auto;
 }
 
-#content ul{
+#criteres ul{
     text-decoration: none;
     margin: 0px;
     padding:15px;
     border-bottom: 0.2px solid #4E4E4E; 
 }
 
-#content li{
+#criteres li{
     font-family: 'LEMON/MILK light', sans-serif;
     font-size: 14px;
     line-height: 14px;
     color: white;
     list-style: none;
     display: inline-block;
-    padding-left:80px;
-    padding-right:80px;
+    width: 30%;
+}
+
+li label{
+    margin-left: 10px;
 }
 
 #php_content{
@@ -61,8 +73,25 @@ body:after{
     margin-bottom:400px;
 }
 
-#titre{
-    padding-left: 95px;
+#php_content ul{
+    text-decoration: none;
+    margin: 0px;
+    padding:15px;
+    border-bottom: 0.2px solid #4E4E4E; 
+}
+
+#php_content li{
+    font-family: 'LEMON/MILK light', sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+    color: white;
+    display: inline-block;
+    list-style: none;
+    width: 33.33%;
+}
+
+#php_content li:hover {
+    background-color:#2B3049;
 }
 
 #artiste{
@@ -90,14 +119,14 @@ body:after{
 
 
 /*#control{
-	background-color:#31373E;
-	margin:0px;
-	padding:0px;
+    background-color:#31373E;
+    margin:0px;
+    padding:0px;
 }
 
 #control img{
-	width:20px;
-	text-align: center;
+    width:20px;
+    text-align: center;
 }*/
 
 #control
@@ -137,6 +166,10 @@ body:after{
     margin-top: 0px;
 }
 
+#audio{
+    text-align: center;
+}
+
 #player_control{
     width: 500px;
     margin: auto;
@@ -161,6 +194,10 @@ body:after{
     padding: 12px 0;
 }
 
+#image_titre{
+        height: 100px;
+}
+
 .button
 {
     width: 26px;
@@ -182,10 +219,101 @@ body:after{
     color: #fff;
 }
 
+
+
+/*#titre li {
+        position: relative;
+}*/
+
+#buttonplaylist, #buttonRemove {
+    border-radius: 20px;
+    width: 340px;
+    height: 53px;
+    margin-top: 15%;
+    position: absolute;
+    left: 40%;
+}
+
+.myplaylist_row {
+    display: flex;
+    position: relative;
+    height: 40px;
+    border-bottom: 0.2px solid #4E4E4E;
+}
+
+
+#content.myplaylist-content {
+        margin-bottom: 200px!important; 
+}
+
+.myplaylist_row> div:nth-child(2) {
+    position: absolute;
+    left: 270px;
+}
+
+.myplaylist_row> div:nth-child(3) {
+    position: absolute;
+    left: 490px;
+}
+
+#nom_playlist {
+    width: 340px;
+    background-color: #29303d;
+    color: white;
+    border: none;
+    border-bottom: 4px solid grey !important;
+    height: 43px !important;
+    margin-top: 6%;
+    position: absolute;
+    left: 40%;
+    font-size: 22px;
+}
+
+#titre, #formplaylist {
+    width: 100%;
+}
+
+#titre li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+#titre #musique_titre {
+    position: absolute;
+    left: 100px;
+    top: 0px;
+}
+
+#titre #musique_artiste {
+    position: absolute;
+    left: 30vw;
+    top: 0;
+}
+
+#titre #musique_album {
+    position: absolute;
+    left: 50vw;
+    top: 0;
+}
+
 /*------------------------------------*\
   #RESPONSIVE
 \*------------------------------------*/
 
-@media (max-width: 768px) { 
+@media (max-width: 1500px) { 
+    #criteres li{
+    padding-left:80px;
+    padding-right:100px;
+    }
+}
 
+
+@media (max-width: 768px) { 
+    #criteres li{
+    padding-left:80px;
+    padding-right:10px;
+    }
 }

@@ -1,9 +1,9 @@
 /* --------- SET --------- */
 
 body {
-	color: #f9daf6;
-	background-color: #212D3A;
-	font-family: Montserrat,sans serif;
+    color: #f9daf6;
+    background-color: #212D3A;
+    font-family: Montserrat,sans serif;
 }
 
 body:after{
@@ -73,9 +73,17 @@ ul {
   background-color: #ffdefc;
     }
 
+#fun_page #border > div {
+      background-color: #475bbe;
+}
+
+#member_page #border > div {
+      background-color: #fff;
+}
+
 
 .one-page{
-	height: 100vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -86,7 +94,7 @@ ul {
 
 
 .title{
-	margin: 0;
+    margin: 0;
     background: #202d3a;
     width: 100%;
     text-align: center;
@@ -99,7 +107,7 @@ ul {
 }
 
 .title>span {
-	font-weight: 300;
+    font-weight: 300;
     letter-spacing: 5px;
     color: #f9daf6;
      -webkit-text-stroke-width: none;
@@ -107,7 +115,7 @@ ul {
 }
 
 .gif-bg{
-	position: absolute;
+    position: absolute;
     z-index: -1;
 }
 
@@ -136,6 +144,7 @@ ul {
 
 .select-mood h1, .select-mood h2 {
     margin-left: 30px;    
+    width: 100%;
 }
 
 .select-mood > h1 {
@@ -168,6 +177,7 @@ ul {
     align-items: center;
     width: 90vw;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 /* --------- GIF --------- */
@@ -195,5 +205,8 @@ ul {
     opacity: 0.4;
 }
 
-
+audio{
+    width:250px;
+    margin-top: 20px;
+}
 

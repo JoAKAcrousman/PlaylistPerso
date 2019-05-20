@@ -3,15 +3,26 @@
      <head>
             <meta charset="utf-8">
             <html lang="en">
+            <link rel="icon" href="./css/images/icon.png">
+			<title>MELE'OHANA</title>
+			<link rel="stylesheet" type="text/css" href="css/styles.css">
             <link rel="stylesheet" type="text/css" href="css/style2.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
      </head>
-     <body>
+     <body id="fun_page">
+     	
+     	<div id="border">
+			<div id="top"></div>
+			<div id="bottom"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+
      	<!-- TOP -->
 		<main>
-			<div class="content">
+			<div class="content content_fun">
 				<div class="content__img-wrap">
 					<div class="content__img"></div>
 					<div class="content__img"></div>
@@ -23,118 +34,44 @@
 
      	<!-- CONTENT -->
         <div id="content">
+
+        	<h2>👉 Pick your favorite songs to create your own playlist </h2> 
+
+        	<div id="criteres">
 			<ul>
 				<li> TITRE </li>
 				<li> ARTISTE </li>
 				<li> ALBUM </li>
-				<li> DATE </li>
-				<li> DUREE </li>
 			</ul>
+			</div>
 			<div id="php_content">
-				<div id="titre">
-<?php
-///AFFICHE LE NOM DES MUSIQUES
+				<form  id="formplaylist" action="">
+					<div id="titre">
+					
+					</div>
+					<input id="nom_playlist" placeholder="👉 GIVE A NAME*" type="text" name="nom_playlist">
+					<input id="buttonplaylist" type="button" name="submit" value="✅ CREATE YOUR PLAYLIST"></input>
 
-require_once "api/MyPDO.elisaciaks9.include.php";
+					<input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input>
 
-$stmt = MyPDO::getInstance()->prepare(<<<SQL
-	SELECT *
-	FROM `Titre`, `Mood`, `link_titre_mood`
-	WHERE Mood.id_mood = link_titre_mood.id_mood
-	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun'
-SQL
-);
-
-$stmt->execute();
-
-$nb = 0;
-while (($row = $stmt->fetch()) !== false) {
-	$nb++;
-	echo "<div id=musique$nb onclick=affiche_playerAudio$nb()>{$row['nom_titre']}</div>";
-	//echo "<br/> Image de l'oeuvre : <img src=".$row['img_titre']."> <br/>";
-}
-
-?>
-				</div>
-				<div id="artiste">
-<?php
-
-$stmt = MyPDO::getInstance()->prepare(<<<SQL
-	SELECT nom_artiste
-	FROM `Titre`, `Artiste`, `link_titre_artiste`, `Mood`, `link_titre_mood`
-	WHERE Titre.id_titre = link_titre_artiste.id_titre
-	AND Artiste.id_artiste = link_titre_artiste.id_artiste
-	AND Mood.id_mood = link_titre_mood.id_mood
-	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun'
-SQL
-);
-
-$stmt->execute();
-
-$ab = 0;
-while (($row = $stmt->fetch()) !== false) {
-	$ab++;
-	echo "<div id=musique$ab onclick=affiche_playerAudio$ab()>{$row['nom_artiste']}</div>";
-}
-?>
-				</div>
-				<div id="album">
-<?php
-
-$stmt = MyPDO::getInstance()->prepare(<<<SQL
-	SELECT nom_album
-	FROM `Titre`, `Album`, `link_titre_album`, `Mood`, `link_titre_mood`
-	WHERE Titre.id_titre = link_titre_album.id_titre
-	AND Album.id_album = link_titre_album.id_album
-	AND Mood.id_mood = link_titre_mood.id_mood
-	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun'
-SQL
-);
-
-$stmt->execute();
-
-$hb = 0;
-while (($row = $stmt->fetch()) !== false) {
-	$hb++;
-	echo "<div id=musique$hb onclick=affiche_playerAudio$hb()>{$row['nom_album']}</div>";
-}
-?>
-				</div>
+				</form>
+			</div>
+				</form>
 			</div>
 		</div>
 
 		<!-- FOOTER -->
 		<div id="control">
-			<div id="player_control">
-				<ul>
-					<li>
-						<div class="button" id="play-previous">
-							<i class="fas fa-backward"></i>
-				        </div>
-			    	</li>
-					<li>
-					    <div class="button" id="play-pause-button">
-					        <i class="fas fa-play"></i>
-				       </div>
-				   </li>
-				   <li>
-				        <div class="button" id="play-next">
-						    <i class="fas fa-forward"></i>
-					   </div>
-					</li>
-				</ul> 
-			</div>
+			
 		</div>
+		<div class="space" style="height: 300px"></div>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|IBM+Plex+Sans:500" rel="stylesheet">
+		<script src="js/selection.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 		<script src="js/blotter.min.js"></script>
         <script src="js/materials/liquidDistortMaterial.js"></script>
 		<script src="js/imagesloaded.pkgd.min.js"></script>
 		<script src="js/demo2.js"></script>
-        <script src="js/selection.js"></script>
     </body>
 </html>
 
