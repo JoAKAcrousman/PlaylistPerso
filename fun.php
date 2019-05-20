@@ -5,13 +5,21 @@
             <html lang="en">
             <link rel="icon" href="./css/images/icon.png">
 			<title>MELE'OHANA</title>
+			<link rel="stylesheet" type="text/css" href="css/styles.css">
             <link rel="stylesheet" type="text/css" href="css/style2.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
      </head>
-     <body>
+     <body id="fun_page">
      	
+     	<div id="border">
+			<div id="top"></div>
+			<div id="bottom"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+
      	<!-- TOP -->
 		<main>
 			<div class="content content_fun">

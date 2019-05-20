@@ -23,6 +23,7 @@
     max-width: 1000px;
     list-style: none;
     text-align: center;
+    padding: 10px;
 }
 
 /* Common style */
@@ -123,7 +124,7 @@ figure.effect-sadie h2 {
     top: 50%;
     left: 0;
     width: 100%;
-    color: #B58F7B;
+    color: #fff;
     -webkit-transition: -webkit-transform 0.35s, color 0.35s;
     transition: transform 0.35s, color 0.35s;
     -webkit-transform: translate3d(0,-50%,0);
@@ -201,92 +202,9 @@ body:after{
 
 
 /* CONTENT */
-#content{
-    width:70%;
-    margin:auto;
-}
 
-#criteres ul{
-    text-decoration: none;
-    margin: 0px;
-    padding:15px;
-    border-bottom: 0.2px solid #4E4E4E; 
-}
 
-#criteres li{
-    font-family: 'LEMON/MILK light', sans-serif;
-    font-size: 14px;
-    line-height: 14px;
-    color: white;
-    list-style: none;
-    display: inline-block;
-    width: 33%;
-}
 
-li label{
-    margin-left: 10px;
-}
-
-#php_content{
-    height:500px;
-    display: flex;
-    margin-bottom:400px;
-}
-
-#php_content ul{
-    text-decoration: none;
-    margin: 0px;
-    padding:15px;
-    border-bottom: 0.2px solid #4E4E4E; 
-}
-
-#php_content li{
-    font-family: 'LEMON/MILK light', sans-serif;
-    font-size: 14px;
-    line-height: 40px;
-    color: white;
-    display: inline-block;
-    list-style: none;
-    width: 33.33%;
-}
-
-#php_content li:hover {
-    background-color:#2B3049;
-}
-
-#artiste{
-    padding-left: 0px;
-}
-
-#album{
-    padding-left: 80px;
-}
-
-#titre>*{  
-    height: 40px;
-    border-bottom: 0.2px solid #4E4E4E;
-}
-
-#artiste>*{  
-    height: 40px;
-    border-bottom: 0.2px solid #4E4E4E;
-}
-
-#album>*{  
-    height: 40px;
-    border-bottom: 0.2px solid #4E4E4E;
-}
-
-#control
-{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #31373E;
-}
 
 
 #image_titre {
@@ -307,152 +225,7 @@ li label{
     top: 10px;
 }
 
-#affiche_info{
-    margin-left:40px;
-    margin-top:20px;
-}
 
-#affiche_info img{
-    float: left;
-    width:100px;
-}
-
-#affiche_info p{
-    float: left;
-    margin-left: 10px;
-    margin-top: 0px;
-}
-
-#affiche_info audio{
-    float: left;
-    margin-left: 10px;
-    margin-top: 0px;
-}
-
-#player_control{
-    width: 500px;
-    margin: auto;
-}
-
-#player_control ul{
-    text-decoration: none;
-    text-align: center;
-}
-
-#player_control li{
-    list-style: none;
-    display: inline-block;
-    padding-left:40px;
-    padding-right:40px;
-}
-
-.control
-{
-    width: 33.333%;
-    float: left;
-    padding: 12px 0;
-}
-
-
-#image_titre{
-    width: 100px;
-    padding: 5px;
-}
-
-.button
-{
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-}
-
-.button i
-{
-    display: block;
-    color: #d6dee7;
-    font-size: 26px;
-    text-align: center;
-    line-height: 1;
-}
-
-.button:hover i
-{
-    color: #fff;
-}
-
-
-#buttonplaylist {
-border-radius: 20px;
-    width: 320px;
-    height: 43px;
-    margin-top: 9%;
-    position: absolute;
-    left: 40%;
-}
-
-.myplaylist_row {
-    display: flex;
-    position: relative;
-    height: 40px;
-    border-bottom: 0.2px solid #4E4E4E;
-}
-
-
-#content.myplaylist-content {
-        margin-bottom: 200px!important; 
-}
-
-.myplaylist_row> div:nth-child(2) {
-    position: absolute;
-    left: 270px;
-}
-
-.myplaylist_row> div:nth-child(3) {
-    position: absolute;
-    left: 490px;
-}
-
-#nom_playlist {
-    width: 340px;
-    background-color: #29303d;
-    color: white;
-    border: none;
-    border-bottom: 4px solid grey !important;
-    height: 43px !important;
-    margin-top: 3%;
-    position: absolute;
-    left: 40%;
-}
-
-#titre, form {
-    width: 100%;
-}
-
-#titre li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-
-#titre #musique_titre {
-    /*A ENLEVER position: absolute;*/
-    padding-left: 10px;
-    top: 0px;
-}
-
-#titre #musique_artiste {
-    position: absolute;
-    left: 23.5vw;
-    top: 0;
-}
-
-#titre #musique_album {
-    position: absolute;
-    left: 46.5vw;
-    top: 0;
-}
 
 /* PAGE PLAYLIST MEMBRE */
 #playlist_perso{
@@ -495,7 +268,7 @@ border-radius: 20px;
 
 .oceane{
     height:200px;
-    background-image: url(images/elisa.jpg);
+    background-image: url(images/oceane.jpg);
     background-size: 250px;
     background-repeat: no-repeat;
 }
@@ -536,6 +309,20 @@ p{
     margin: 0px;
 }
 
+#member_page form {
+overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#membre_page .select-mood h2.p {
+    margin-left: 15vw;
+}
 
 /*------------------------------------*\
   #RESPONSIVE

@@ -73,6 +73,14 @@ ul {
   background-color: #ffdefc;
     }
 
+#fun_page #border > div {
+      background-color: #475bbe;
+}
+
+#member_page #border > div {
+      background-color: #fff;
+}
+
 
 .one-page{
     height: 100vh;

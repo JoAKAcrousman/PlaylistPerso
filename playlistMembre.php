@@ -5,13 +5,28 @@
             <html lang="en">
             <link rel="icon" href="./css/images/icon.png">
 			<title>MELE'OHANA</title>
+			<link rel="stylesheet" type="text/css" href="css/styles.css">
+			<link rel="stylesheet" type="text/css" href="css/style2.css">
             <link rel="stylesheet" type="text/css" href="css/playlistMembre.css">
 			<link rel="stylesheet" type="text/css" href="css/base.css" />
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/solid.css'>
 			<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css'>
      </head>
-     <body>
-		<div id="playlist_perso">
+     <body id="member_page">
+     	<div id="border">
+			<div id="top"></div>
+			<div id="bottom"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+
+<section class="select-mood">
+
+<h1 id="1">WHO ARE WE?</h1>
+			<h2 class="p">👉 Here get your best new songs with a selection of each of us, and discover who we are.</h2>
+
+<form>
+
 			<div class="playlist_mystere" onclick="affichePlaylistMembre('elisa')">
 				<figure class="effect-sadie">
                         <img src="css/images/elisa.jpg" alt="img02"/>
@@ -32,7 +47,7 @@
 			</div>
 			<div class="playlist_mystere" onclick="affichePlaylistMembre('oceane')">
 				<figure class="effect-sadie">
-                        <img src="css/images/elisa.jpg" alt="img02"/>
+                        <img src="css/images/oceane.jpg" alt="img02"/>
                         <figcaption>
                             <h2>Playlist d'<span>Oceane</span></h2>
                             <p>Sadie never took her eyes off me. <br>She had a dark soul.</p>
@@ -57,7 +72,8 @@
                         </figcaption>            
                   </figure>
 			</div>
-		</div>
+</form>
+	</section>
 		<div id="content">
         	<div id="criteres">
 			<ul>
