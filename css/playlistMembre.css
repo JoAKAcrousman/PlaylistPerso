@@ -208,16 +208,19 @@ body:after{
 
 
 #image_titre {
-    position: absolute;
+/*    position: absolute;
     left: 5px;
     top: 0px;
+    */
+        height: 100%;
+    width: 100%;
 }
 
-#nom_titre {
+/*#nom_titre {
     position: absolute;
     left: 15vh;
     top: 10px;
-}
+}*/
 
 #audio_titre {
     position: absolute;

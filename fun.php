@@ -23,7 +23,7 @@
 		<!-- LEFT BAR MENU -->
 		<div id="menu_left">
 			<div id="content_menu_left">
-				<a href="http://localhost/IMAC/PlaylistPerso/index.php"> 
+				<a href="index.php"> 
 					<img src="css/images/house.png">
 					<p> Accueil </p>
 				</a>

@@ -17,14 +17,14 @@ function affichePlayerAudio(player){
 			document.getElementById('control').innerHTML = "";
 			text.forEach( player => {
 				let div = document.createElement("div");
-				div.innerHTML = "<img src=" + player.img_titre + " id=image_titre>" + "<span id='nom_titre'>" + player.nom_titre + "</span>" + "<audio controls=controls id=audio_titre> <source src=" + player.mp3_titre + "> <type=audio/mp3/>";
+				div.innerHTML = "<div class='img_container'><img src=" + player.img_titre + " id=image_titre></div>" + " <div class='playerlayout'><span id='nom_titre'>" + player.nom_titre + "</span>" + "<audio controls=controls> <source src=" + player.mp3_titre + "> <type=audio/mp3/></div>";
 				console.log(player);
 				control.appendChild(div);
 			});
 		})
 		.catch(error => {console.log(error)});
 };
-
+à
 
 // permet d'afficher les playlists mystères de chacun des membres du groupe
 function affichePlaylistMembre(nom){

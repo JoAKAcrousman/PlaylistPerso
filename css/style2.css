@@ -215,13 +215,24 @@ li label{
 
 #control
 {
-    position: fixed;
+position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: fit-content;
     background-color: #31373E;
+}
+
+#control .img_container {
+           width: 11%;
+    max-width: 160px;
+    border: 7px solid white;
+    margin-left: 11px;
+    margin-bottom: 11px;
+    position: absolute;
+    bottom: 0px;
+    /* margin-left: 10px; */
 }
 
 #informations{
@@ -278,8 +289,30 @@ li label{
     padding: 12px 0;
 }
 
+
+.playerlayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 45%;
+}
+
+#control > div {
+        display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /*position: relative;*/
+    min-height: 135px;
+}
+
+
+
 #image_titre{
-        height: 100px;
+        /*height: 100px;*/
+    height: 100%;
+    width: 100%;
 }
 
 .button
