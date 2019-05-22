@@ -23,6 +23,10 @@ ul {
    list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* --------- FONT --------- */
 
 
@@ -158,8 +162,8 @@ ul {
     -webkit-text-stroke-color: #fdddfa40;
 }
 
-.select-mood button[type='submit']{
-    color: #f4d5f2;
+.select-mood .selectionMood{
+color: #f4d5f2;
     border: 5px solid #f4d5f2;
     font-size: 25px;
     font-weight: 600;
@@ -168,6 +172,9 @@ ul {
     cursor: pointer;
     background-color: transparent;
     margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .select-mood form {

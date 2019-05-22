@@ -19,6 +19,8 @@ http_response_code(200);
 
 $musiques = array();
 
+$nom_mood = $_GET['mood'];
+
 $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	SELECT nom_titre, Titre.id_titre, nom_artiste, nom_album
 	FROM `Titre`, `Mood`, `link_titre_mood`, `Artiste`, `link_titre_artiste`,`Album`,`link_titre_album`
@@ -28,7 +30,7 @@ $stmt = MyPDO::getInstance()->prepare(<<<SQL
 	AND Artiste.id_artiste = link_titre_artiste.id_artiste
 	AND Mood.id_mood = link_titre_mood.id_mood
 	AND Titre.id_titre = link_titre_mood.id_titre
-	AND Mood.nom_mood = 'Fun' 
+	AND Mood.nom_mood = '$nom_mood' 
 SQL
 );
 

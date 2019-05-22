@@ -9,9 +9,22 @@ Document.prototype.ready = callback => {
 	}
 };
 
+function GetUrlParam( paramName )
+{
+var oRegex = new RegExp( '[\?&]' + paramName + '=([^&]+)', 'i' ) ;
+var oMatch = oRegex.exec( window.top.location.search ) ;
+
+if ( oMatch && oMatch.length > 1 )
+return decodeURIComponent( oMatch[1] ) ;
+else
+return ;
+}
+
+
+
 // permet d'afficher toutes les musiques
 document.ready( () => {
-	fetch("./api/controller/afficheFunPlaylist.php") 
+	fetch("./api/controller/afficheFunPlaylist.php?mood="+GetUrlParam('mood')) 
 		.then( response => response.json() )
 		.then( data => {
 			let titre = document.getElementById('titre');

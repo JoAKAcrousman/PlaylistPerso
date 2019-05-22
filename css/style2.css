@@ -43,6 +43,7 @@ body:after{
     height: 100%;
     background-color: #202020;
     vertical-align: center;
+    z-index: 1;
 }
 
 #content_menu_left{
@@ -232,6 +233,7 @@ position: fixed;
     margin-bottom: 11px;
     position: absolute;
     bottom: 0px;
+    z-index: 2;
     /* margin-left: 10px; */
 }
 

@@ -63,18 +63,42 @@
 			<h1 id="1">WHAT'S YOUR MOOD?</h1>
 			<h2>👉 Select your mood and we will give you the playlist you need</h2>
 			<form action="">
-				<button id="trigger-happy" class="pop-text" data-pop-media="happy" type="submit" value="happy">HAPPY</button>
+				
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Happy">
+					<div class="selectionMood" id="trigger-happy" class="pop-text" data-pop-media="happy"> 
+						<span>HAPPY</span> 
+					</div>
+				</a>
 
-				<button id="trigger-sad" class="pop-text" data-pop-media="sad" type="submit" value="sad">SAD</button>
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Sad">
+					<div class="selectionMood" id="trigger-sad" class="pop-text" data-pop-media="sad"> 
+						<span>SAD</span> 
+					</div>
+				</a>
 
-				<button id="trigger-fun" class="pop-text" data-pop-media="fun" type="submit" value="fun" formaction="fun.php"> FUN </button>
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Fun">
+					<div class="selectionMood" id="trigger-fun" class="pop-text" data-pop-media="fun"> 
+						<span>FUN</span> 
+					</div>
+				</a>
 
-				<button id="trigger-chill" class="pop-text" data-pop-media="chill" type="submit" value="chill"> CHILL </button>
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Chill">
+					<div class="selectionMood" id="trigger-chill" class="pop-text" data-pop-media="chill"> 
+						<span>CHILL</span> 
+					</div>
+				</a>
 
-				<button id="trigger-angry" class="pop-text" data-pop-media="angry" type="submit" value="angry">ANGRY</button>
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Angry">
+					<div class="selectionMood" id="trigger-angry" class="pop-text" data-pop-media="angry"> 
+						<span>ANGRY</span> 
+					</div>
+				</a>
 
-				<button id="trigger-nostalgic" class="pop-text" data-pop-media="nostalgic" type="submit" value="nostalgic"> NOSTALGIC</button>
-
+				<a href="https://elisaciavaldini.fr/meleohana/fun.php?mood=Nostalgic">
+					<div class="selectionMood" id="trigger-nostalgic" class="pop-text" data-pop-media="nostalgic"> 
+						<span>NOSTALGIC</span> 
+					</div>
+				</a>
 			</form>
 
 			
@@ -83,9 +107,17 @@
 				
 				<h2>👉 Moooore </h2>
 			
-				<button id="trigger-creator" class="pop-text" data-pop-media="creator" type="submit" value="creator" formaction="playlistMembre.php"> PLAYLISTS DES CREATEURS</button>
-			
-				<button disabled id="trigger-mystery" class="pop-text" data-pop-media="mystery" type="submit" value="mystery"> TRY "?" TO DISCOVER <br/> SOMETHING</button>
+				<a href="https://elisaciavaldini.fr/meleohana/playlistMembre.php">
+					<div class="selectionMood" id="trigger-creator" class="pop-text" data-pop-media="creator"> 
+						<span>PLAYLISTS DES CREATEURS</span> 
+					</div>
+				</a>
+
+				<div class="selectionMood" id="trigger-mystery" class="pop-text" data-pop-media="mystery"> 
+						<span>TRY "?" TO DISCOVER <br/> SOMETHING</span> 
+					</div>
+
+				
 
 			</form>
 		</section>
