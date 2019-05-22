@@ -20,43 +20,67 @@
 			<div id="right"></div>
 		</div>
 
+		<!-- LEFT BAR MENU -->
+		<div id="menu_left">
+			<div id="content_menu_left">
+				<a href="http://localhost/IMAC/PlaylistPerso/index.php"> 
+					<img src="css/images/house.png">
+					<p> Accueil </p>
+				</a>
+			</div>
+			<div id="clear_both"></div>
+			<div id="content_menu_left">
+				<a href="#"> 
+					<img src="css/images/magnifying-glass.png">
+					<p> Rechercher </p>
+				</a>
+			</div>
+			<div id="clear_both"></div>
+			<div id="content_menu_left_bibliotheque">
+				<p> BIBLIOTHEQUE </p>
+				<p> Artiste </p>
+				<p> Album </p>
+			</div>
+			<div id="content_menu_left_playlist">
+				<p> PLAYLIST </p>
+			</div>
+		</div>
+
      	<!-- TOP -->
-		<main>
-			<div class="content content_fun">
-				<div class="content__img-wrap">
-					<div class="content__img"></div>
-					<div class="content__img"></div>
-					<div class="content__img"></div>
-				</div>
-				<div class="content__text"><span class="content__text-inner">Funny playlist</span></div>
-			</div>
-		</main>
-
-     	<!-- CONTENT -->
-        <div id="content">
-
-        	<h2>👉 Pick your favorite songs to create your own playlist </h2> 
-
-        	<div id="criteres">
-			<ul>
-				<li> TITRE </li>
-				<li> ARTISTE </li>
-				<li> ALBUM </li>
-			</ul>
-			</div>
-			<div id="php_content">
-				<form  id="formplaylist" action="">
-					<div id="titre">
-					
+     	<div id="main_content">
+			<main>
+				<div class="content content_fun">
+					<div class="content__img-wrap">
+						<div class="content__img"></div>
+						<div class="content__img"></div>
+						<div class="content__img"></div>
 					</div>
-					<input id="nom_playlist" placeholder="👉 GIVE A NAME*" type="text" name="nom_playlist">
-					<input id="buttonplaylist" type="button" name="submit" value="✅ CREATE YOUR PLAYLIST"></input>
+					<div class="content__text"><span class="content__text-inner">Funny playlist</span></div>
+				</div>
+			</main>
 
-					<!-- <input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input> -->
-
-				</form>
-			</div>
-				</form>
+	     	<!-- CONTENT -->
+	        <div id="content">
+	        	<h2>👉 Pick your favorite songs to create your own playlist </h2> 
+	        	<div id="criteres">
+				<ul>
+					<li id="un"> TITRE </li>
+					<li id="deux"> ARTISTE </li>
+					<li id="trois"> ALBUM </li>
+				</ul>
+				</div>
+				<div id="php_content">
+					<form  id="formplaylist" action="">
+						<div id="titre">
+						
+						</div>
+						<input id="nom_playlist" placeholder="👉 GIVE A NAME*" type="text" name="nom_playlist">
+						<input id="buttonplaylist" type="button" name="submit" value="✅ CREATE YOUR PLAYLIST"></input>
+						<!-- <input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input> -->
+					</form>
+				</div>
+					</form>
+				</div>
 			</div>
 		</div>
 

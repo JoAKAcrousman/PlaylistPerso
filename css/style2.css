@@ -31,6 +31,78 @@ body:after{
 
 /* TOP */
 
+/* LEFT MENU BAR */
+
+#menu_left{
+    position: fixed;
+    float:left;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #202020;
+    vertical-align: center;
+}
+
+#content_menu_left{
+    margin-left:30px;
+    margin-top:25px;
+    vertical-align: center;
+}
+
+#content_menu_left img{
+    float:left;
+    width:25px;
+}
+
+#content_menu_left p{
+    float:left;
+    margin:3%;
+    margin-left: 20px;
+    font-size: 15px;
+    color:#B3B3B3;
+}
+
+#content_menu_left p:hover{
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#clear_both{
+    clear: both;
+}
+
+#content_menu_left_bibliotheque{
+    color:#B3B3B3;
+    margin:30px;
+    margin-top: 30px;
+}
+
+#content_menu_left_bibliotheque:hover{
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#content_menu_left_playlist{
+    color:#B3B3B3;
+    margin:30px;
+    margin-top: 30px;
+}
+
+.li_nomplaylist{
+    list-style: none;
+}
+
+.li_nomplaylist:hover {
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#main_content{
+    margin-left:5%;
+}
+
 
 /* CONTENT */
 h1#new_name {
@@ -61,6 +133,18 @@ h1#new_name {
     list-style: none;
     display: inline-block;
     width: 30%;
+}
+
+#un{
+    padding-left: 9vh;
+}
+
+#deux{
+    padding-left: 16vh;
+}
+
+#trois{
+    padding-left: 17vh;
 }
 
 li label{

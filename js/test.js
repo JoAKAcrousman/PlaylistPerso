@@ -9,10 +9,6 @@ Document.prototype.ready = callback => {
 	}
 };
 
-// window.onload = function(){
-// 	document.getElementById('control').style.display = none;
-// };
-
 // permet d'afficher le player audio lorsque l'on clique sur une musique
 function affichePlayerAudio(player){
 	fetch("./api/controller/affichePlayer.php?id="+player.id_titre) 
