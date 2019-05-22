@@ -111,8 +111,8 @@ document.getElementById("buttonplaylist").onclick = event => {
 					let content_titre = document.querySelector(".content__text");
 					content_titre.innerHTML="";
 
-					let buttonRemove = document.getElementById("buttonRemove");
-					buttonRemove.style.visibility = "visible";
+					// let buttonRemove = document.getElementById("buttonRemove");
+					// buttonRemove.style.visibility = "visible";
 
 	   				let container_h1 = document.querySelector(".content")
 
@@ -121,16 +121,6 @@ document.getElementById("buttonplaylist").onclick = event => {
 					let h1 = document.createElement("h1");
 					h1.innerHTML = params['nom_playlist'];
 					h1.id = "new_name";
-
-					//let buttonRemove = document.getElementById("buttonRemove");
-
-					// let buttonRemove = document.createElement("input");
-					// buttonRemove.id = "buttonRemove";
-					// buttonRemove.type = "button";
-					// buttonRemove.name = "submit";
-					// buttonRemove.value = "🗑 REMOVE SONGS SELECTED ";
-
-					// let form = document.getElementById("formplaylist");
 
 					document.getElementById("buttonplaylist").style.display="none";
 					document.getElementById("nom_playlist").style.display="none";
@@ -174,63 +164,63 @@ document.getElementById("buttonplaylist").onclick = event => {
 
 
 
-buttonRemove.onclick = event => {
-	event.preventDefault();
-	let params = {}
-	var checkedValue = [];
-	var removeElements = document.getElementsByClassName('inputElements');
-	//permet de savoir quels sont les checkboxs cochées
-	for(var i=1; removeElements[i]; ++i){
-      	if(removeElements[i].checked){
-           checkedValue.push(removeElements[i].value);
-    	}
-	}
+// buttonRemove.onclick = event => {
+// 	event.preventDefault();
+// 	let params = {}
+// 	var checkedValue = [];
+// 	var removeElements = document.getElementsByClassName('inputElements');
+// 	//permet de savoir quels sont les checkboxs cochées
+// 	for(var i=1; removeElements[i]; ++i){
+//       	if(removeElements[i].checked){
+//            checkedValue.push(removeElements[i].value);
+//     	}
+// 	}
 
-	params['id'] = checkedValue;
+// 	params['id'] = checkedValue;
 
-	// permet de créer une playlist
-	let newName = document.getElementById('new_name');
-	params['nom_playlist'] =  newName.innerHTML;
+// 	// permet de créer une playlist
+// 	let newName = document.getElementById('new_name');
+// 	params['nom_playlist'] =  newName.innerHTML;
 
 
-		var body = JSON.stringify(params);
-		var xhr = getXhr()
-		// On défini ce qu'on va faire quand on aura la réponse
-		xhr.onreadystatechange = function(){
-			// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
-			if(xhr.readyState == 4 && xhr.status == 200){
+// 		var body = JSON.stringify(params);
+// 		var xhr = getXhr()
+// 		// On défini ce qu'on va faire quand on aura la réponse
+// 		xhr.onreadystatechange = function(){
+// 			// On ne fait quelque chose que si on a tout reçu et que le serveur est ok
+// 			if(xhr.readyState == 4 && xhr.status == 200){
 				
-			fetch("./api/controller/deletefromPlaylist.php?name="+params['nom_playlist']) 
-				.then( response => response.json() )
-				.then( data => {
+// 			fetch("./api/controller/deletefromPlaylist.php?name="+params['nom_playlist']) 
+// 				.then( response => response.json() )
+// 				.then( data => {
 
-					document.getElementById('titre').innerHTML = "";
-					data.forEach( newplaylist => {
-						let div = document.createElement("div");
-						div.innerHTML = "<span id='musique_titre'>" + newplaylist.titre + "</span>" + "<span id='musique_artiste'>" + newplaylist.artiste + "</span>" + "<span id='musique_album'>" + newplaylist.album + "</span>";
+// 					document.getElementById('titre').innerHTML = "";
+// 					data.forEach( newplaylist => {
+// 						let div = document.createElement("div");
+// 						div.innerHTML = "<span id='musique_titre'>" + newplaylist.titre + "</span>" + "<span id='musique_artiste'>" + newplaylist.artiste + "</span>" + "<span id='musique_album'>" + newplaylist.album + "</span>";
 
-						let input = document.createElement("input");
-						input.type = "checkbox";
-						input.value = newplaylist.id;
-						input.name = "titre[]";
-						input.className ="inputElements";
+// 						let input = document.createElement("input");
+// 						input.type = "checkbox";
+// 						input.value = newplaylist.id;
+// 						input.name = "titre[]";
+// 						input.className ="inputElements";
 						
-						let li  = document.createElement("li");
-						div.onclick=function(){affichePlayerAudio(newplaylist);}
+// 						let li  = document.createElement("li");
+// 						div.onclick=function(){affichePlayerAudio(newplaylist);}
 
-						li.appendChild(input);
-						li.appendChild(div);
+// 						li.appendChild(input);
+// 						li.appendChild(div);
 
-					});
-				})
-				.catch(error => { console.log(error) });
-				}
-		}
+// 					});
+// 				})
+// 				.catch(error => { console.log(error) });
+// 				}
+// 		}
 
-		xhr.open("GET","./api/controller/affichePlaylistUser.php?id=161",true);
-		xhr.send(body);
+// 		xhr.open("GET","./api/controller/affichePlaylistUser.php?id=161",true);
+// 		xhr.send(body);
 
-}
+// }
 
 
 
