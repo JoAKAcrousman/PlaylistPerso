@@ -1,19 +1,19 @@
 /*------------------------------------*\
   #STYLE DE LA PAGE DE SELECTION
-\*------------------------------------*/
+  \*------------------------------------*/
 
-/* EFFET HOVER */
+  /* EFFET HOVER */
 
-*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; } // required 
-@font-face {
+  *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; } // required 
+  @font-face {
     font-weight: normal;
     font-style: normal;
     font-family: 'feathericons';
     src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
     src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
-        url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
-        url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
-        url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+    url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+    url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+    url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
 }
 
 .playlist_mystere {
@@ -47,6 +47,7 @@
     min-height: 100%;
     max-width: 100%;
     opacity: 0.8;
+    border: 8px solid white;
 }
 
 .playlist_mystere figure figcaption {
@@ -122,7 +123,7 @@ figure.effect-sadie figcaption::before {
 figure.effect-sadie h2 {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 20px;
     width: 100%;
     color: #fff;
     -webkit-transition: -webkit-transform 0.35s, color 0.35s;
@@ -212,7 +213,7 @@ body:after{
     left: 5px;
     top: 0px;
     */
-        height: 100%;
+    height: 100%;
     width: 100%;
 }
 
@@ -220,128 +221,130 @@ body:after{
     position: absolute;
     left: 15vh;
     top: 10px;
-}*/
+    }*/
 
-#audio_titre {
-    position: absolute;
-    left: 50vh;
-    top: 10px;
-}
+    #audio_titre {
+        position: absolute;
+        left: 50vh;
+        top: 10px;
+    }
 
 
 
-/* PAGE PLAYLIST MEMBRE */
-#playlist_perso{
-    width:70%;
-    margin:auto;
-    margin-top:200px;
-    display: flex;
-    flex-wrap: wrap;
-}
+    /* PAGE PLAYLIST MEMBRE */
+    #playlist_perso{
+        width:70%;
+        margin:auto;
+        margin-top:200px;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-#elisa{
-    width:20%;
-    height:300px;
-}
+    #elisa{
+        width:20%;
+        height:300px;
+    }
 
-.elisa{
-    height:200px;
-    background-image: url(images/elisa.jpg);
-    background-size: 250px;
-    background-repeat: no-repeat;
+    .elisa{
+        height:200px;
+        background-image: url(images/elisa.jpg);
+        background-size: 250px;
+        background-repeat: no-repeat;
 
-}
+    }
 
-#sarah{
-    width:20%;
-    height:300px;
-}
+    #sarah{
+        width:20%;
+        height:300px;
+    }
 
-/*.sarah{
-    height:200px;
-    background-image: url(images/elisa.jpg);
-    background-size: 250px;
-    background-repeat: no-repeat;
-}*/
+    .sarah{
+        height:200px;
+        background-image: url(images/sarah.jpg);
+        background-size: 250px;
+        background-repeat: no-repeat;
+    }
 
-#oceane{
-    width:20%;
-    height:300px;
-}
+    #oceane{
+        width:20%;
+        height:300px;
+    }
 
-.oceane{
-    height:200px;
-    background-image: url(images/oceane.jpg);
-    background-size: 250px;
-    background-repeat: no-repeat;
-}
+    .oceane{
+        height:200px;
+        background-image: url(images/oceane.jpg);
+        background-size: 250px;
+        background-repeat: no-repeat;
+    }
 
-#andrea{
-    width:20%;
-    height:300px;
-}
+    #andrea{
+        width:20%;
+        height:300px;
+    }
 
-.andrea{
-    height:200px;
-    background-image: url(images/elisa.jpg);
-    background-size: 250px;
-    background-repeat: no-repeat;
-}
+    .andrea{
+        height:200px;
+        background-image: url(images/andrea.jpg);
+        background-size: 250px;
+        background-repeat: no-repeat;
+    }
 
-#johan{
-    width:20%;
-    height:300px;
-}
+    #johan{
+        width:20%;
+        height:300px;
+    }
 
-.johan{
-    height:200px;
-    background-image: url(images/elisa.jpg);
-    background-size: 250px;
-    background-repeat: no-repeat;
-}
+    .johan{
+        height:200px;
+        background-image: url(images/johan.jpg);
+        background-size: 250px;
+        background-repeat: no-repeat;
+    }
 
-h2{
-    text-align:left;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0px;
-}
 
-p{
-    text-align:left;
-    margin: 0px;
-}
 
-#member_page form {
-overflow-x: scroll;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 90vw;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    h2{
+        text-align:left;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0px;
+    }
 
-#membre_page .select-mood h2.p {
-    margin-left: 15vw;
-}
+    p{
+        text-align:left;
+        margin: 0px;
+    }
+
+    #member_page form {
+        overflow-x: scroll;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 90vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #membre_page .select-mood h2.p {
+        margin-left: 15vw;
+    }
 
 /*------------------------------------*\
   #RESPONSIVE
-\*------------------------------------*/
+  \*------------------------------------*/
 
-@media (max-width: 1500px) { 
+  @media (max-width: 1500px) { 
     #criteres li{
-    padding-left:80px;
-    padding-right:100px;
+        padding-left:80px;
+        padding-right:100px;
     }
 }
 
 
 @media (max-width: 768px) { 
     #criteres li{
-    padding-left:80px;
-    padding-right:10px;
+        padding-left:80px;
+        padding-right:10px;
     }
 }
