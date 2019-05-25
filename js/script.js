@@ -33,7 +33,7 @@
 
     MediaRevealer.prototype.positionMedia = function() {
         var elOffset = this.el.getBoundingClientRect(), 
-            contentOffset = this.contentEl.getBoundingClientRect();
+        contentOffset = this.contentEl.getBoundingClientRect();
 
         this.mediaEl.style.top = parseFloat((elOffset.top + this.el.offsetHeight/2) - contentOffset.top - this.mediaEl.offsetHeight/2) + 'px';
         this.mediaEl.style.left = parseFloat((elOffset.left + this.el.offsetWidth/2) - contentOffset.left - this.mediaEl.offsetWidth/2) + 'px';

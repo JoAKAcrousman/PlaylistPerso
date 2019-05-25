@@ -58,7 +58,7 @@
             fill : 'white'
         });
         elem.removeChild(textEl);
-    
+        
         const material = new Blotter.LiquidDistortMaterial();
         material.uniforms.uSpeed.value = 1;
         material.uniforms.uVolatility.value = 0;
@@ -83,7 +83,7 @@
                 imgTranslations[i].y = MathUtils.lerp(imgTranslations[i].y, MathUtils.lineEq(40, -40, winsize.height, 0, relmousepos.y), i === imgsTotal - 1 ? 0.15 : 0.03*i + 0.03);
                 imgs[i].style.transform = `translateX(${(imgTranslations[i].x)}px) translateY(${imgTranslations[i].y}px)`;
             };
-    
+            
             lastMousePosition = {x: relmousepos.x, y: relmousepos.y};
             requestAnimationFrame(render);
         }

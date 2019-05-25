@@ -23,6 +23,10 @@ ul {
    list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* --------- FONT --------- */
 
 
@@ -73,14 +77,32 @@ ul {
   background-color: #ffdefc;
     }
 
-#fun_page #border > div {
+#border.border_Happy > div {
+      background-color: #a59e7a;
+}
+
+#border.border_Fun > div {
       background-color: #475bbe;
+}
+
+#border.border_Sad > div {
+      background-color: #748db0;
+}
+
+#border.border_Angry > div {
+      background-color: #7a1f0b;
+}
+
+#border.border_Chill > div {
+      background-color: #878391;
+}
+#border.border_Nostalgic > div {
+      background-color: #e0a6e1;
 }
 
 #member_page #border > div {
       background-color: #fff;
 }
-
 
 .one-page{
     height: 100vh;
@@ -142,6 +164,11 @@ ul {
     position: relative;
 }
 
+.select-mood > form > a {
+    margin: 1%;
+}
+
+
 .select-mood h1, .select-mood h2 {
     margin-left: 30px;    
     width: 100%;
@@ -158,8 +185,8 @@ ul {
     -webkit-text-stroke-color: #fdddfa40;
 }
 
-.select-mood button[type='submit']{
-    color: #f4d5f2;
+.select-mood .selectionMood{
+color: #f4d5f2;
     border: 5px solid #f4d5f2;
     font-size: 25px;
     font-weight: 600;
@@ -168,7 +195,18 @@ ul {
     cursor: pointer;
     background-color: transparent;
     margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+
+.select-mood .selectionMood span {
+
+        text-align: center; 
+}
+
+   
 
 .select-mood form {
     display: flex;

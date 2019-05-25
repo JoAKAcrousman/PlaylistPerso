@@ -1,9 +1,9 @@
 /*------------------------------------*\
   #STYLE DE LA PAGE DE SELECTION
-\*------------------------------------*/
+  \*------------------------------------*/
 
-*:focus
-{
+  *:focus
+  {
     outline: none;
 }
 
@@ -30,6 +30,79 @@ body:after{
 }
 
 /* TOP */
+
+/* LEFT MENU BAR */
+
+#menu_left{
+    position: fixed;
+    float:left;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #202020;
+    vertical-align: center;
+    z-index: 1;
+}
+
+#content_menu_left{
+    margin-left:30px;
+    margin-top:25px;
+    vertical-align: center;
+}
+
+#content_menu_left img{
+    float:left;
+    width:25px;
+}
+
+#content_menu_left p{
+    float:left;
+    margin:3%;
+    margin-left: 20px;
+    font-size: 15px;
+    color:#B3B3B3;
+}
+
+#content_menu_left p:hover{
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#clear_both{
+    clear: both;
+}
+
+#content_menu_left_bibliotheque{
+    color:#B3B3B3;
+    margin:30px;
+    margin-top: 30px;
+}
+
+#content_menu_left_bibliotheque:hover{
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#content_menu_left_playlist{
+    color:#B3B3B3;
+    margin:30px;
+    margin-top: 30px;
+}
+
+.li_nomplaylist{
+    list-style: none;
+}
+
+.li_nomplaylist:hover {
+    color:#FFFFFF;
+    cursor: pointer;
+}
+
+#main_content{
+    margin-left:5%;
+}
 
 
 /* CONTENT */
@@ -61,6 +134,18 @@ h1#new_name {
     list-style: none;
     display: inline-block;
     width: 30%;
+}
+
+#un{
+    padding-left: 9vh;
+}
+
+#deux{
+    padding-left: 16vh;
+}
+
+#trois{
+    padding-left: 17vh;
 }
 
 li label{
@@ -127,24 +212,37 @@ li label{
 #control img{
     width:20px;
     text-align: center;
-}*/
+    }*/
 
-#control
-{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #31373E;
-}
+    #control
+    {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #31373E;
+        z-index: 2;
+    }
 
-#informations{
+    #control .img_container {
+       width: 11%;
+       max-width: 160px;
+       border: 7px solid white;
+       margin-left: 11px;
+       margin-bottom: 11px;
+       position: absolute;
+       bottom: 0px;
+       z-index: 2;
+       /* margin-left: 10px; */
+   }
 
-}
+   #informations{
 
-#affiche_info{
+   }
+
+   #affiche_info{
     margin-left:40px;
     margin-top:20px;
 }
@@ -194,8 +292,30 @@ li label{
     padding: 12px 0;
 }
 
+
+.playerlayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 45%;
+}
+
+#control > div {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /*position: relative;*/
+    min-height: 135px;
+}
+
+
+
 #image_titre{
-        height: 100px;
+    /*height: 100px;*/
+    height: 100%;
+    width: 100%;
 }
 
 .button
@@ -223,97 +343,97 @@ li label{
 
 /*#titre li {
         position: relative;
-}*/
+        }*/
 
-#buttonplaylist, #buttonRemove {
-    border-radius: 20px;
-    width: 340px;
-    height: 53px;
-    margin-top: 15%;
-    position: absolute;
-    left: 40%;
-}
+        #buttonplaylist, #buttonRemove {
+            border-radius: 20px;
+            width: 340px;
+            height: 53px;
+            margin-top: 15%;
+            position: absolute;
+            left: 40%;
+        }
 
-.myplaylist_row {
-    display: flex;
-    position: relative;
-    height: 40px;
-    border-bottom: 0.2px solid #4E4E4E;
-}
+        .myplaylist_row {
+            display: flex;
+            position: relative;
+            height: 40px;
+            border-bottom: 0.2px solid #4E4E4E;
+        }
 
 
-#content.myplaylist-content {
-        margin-bottom: 200px!important; 
-}
+        #content.myplaylist-content {
+            margin-bottom: 200px!important; 
+        }
 
-.myplaylist_row> div:nth-child(2) {
-    position: absolute;
-    left: 270px;
-}
+        .myplaylist_row> div:nth-child(2) {
+            position: absolute;
+            left: 270px;
+        }
 
-.myplaylist_row> div:nth-child(3) {
-    position: absolute;
-    left: 490px;
-}
+        .myplaylist_row> div:nth-child(3) {
+            position: absolute;
+            left: 490px;
+        }
 
-#nom_playlist {
-    width: 340px;
-    background-color: #29303d;
-    color: white;
-    border: none;
-    border-bottom: 4px solid grey !important;
-    height: 43px !important;
-    margin-top: 6%;
-    position: absolute;
-    left: 40%;
-    font-size: 22px;
-}
+        #nom_playlist {
+            width: 340px;
+            background-color: #29303d;
+            color: white;
+            border: none;
+            border-bottom: 4px solid grey !important;
+            height: 43px !important;
+            margin-top: 6%;
+            position: absolute;
+            left: 40%;
+            font-size: 22px;
+        }
 
-#titre, #formplaylist {
-    width: 100%;
-}
+        #titre, #formplaylist {
+            width: 100%;
+        }
 
-#titre li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
+        #titre li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
 
-#titre #musique_titre {
-    position: absolute;
-    left: 100px;
-    top: 0px;
-}
+        #titre #musique_titre {
+            position: absolute;
+            left: 100px;
+            top: 0px;
+        }
 
-#titre #musique_artiste {
-    position: absolute;
-    left: 30vw;
-    top: 0;
-}
+        #titre #musique_artiste {
+            position: absolute;
+            left: 30vw;
+            top: 0;
+        }
 
-#titre #musique_album {
-    position: absolute;
-    left: 50vw;
-    top: 0;
-}
+        #titre #musique_album {
+            position: absolute;
+            left: 50vw;
+            top: 0;
+        }
 
 /*------------------------------------*\
   #RESPONSIVE
-\*------------------------------------*/
+  \*------------------------------------*/
 
-@media (max-width: 1500px) { 
+  @media (max-width: 1500px) { 
     #criteres li{
-    padding-left:80px;
-    padding-right:100px;
+        padding-left:80px;
+        padding-right:100px;
     }
 }
 
 
 @media (max-width: 768px) { 
     #criteres li{
-    padding-left:80px;
-    padding-right:10px;
+        padding-left:80px;
+        padding-right:10px;
     }
 }
