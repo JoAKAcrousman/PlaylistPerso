@@ -37,7 +37,7 @@
 		</div>
 		<div id="clear_both"></div>
 		<div id="content_menu_left_bibliotheque">
-			<p> BIBLIOTHEQUE </p>
+			<p> INFORMATIONS </p>
 			<p> Artiste </p>
 			<p> Album </p>
 		</div>

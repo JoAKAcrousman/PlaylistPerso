@@ -254,6 +254,21 @@ document.ready( () => {
 	.catch(error => { console.log(error) });
 });
 
+function onMouseOverArtiste(){
+	document.querySelector(".mosaique_artiste").style.color = "white";
+}
+
+function onMouseOverAlbum(){
+	document.querySelector(".mosaique_album").style.color = "white";
+}
+
+function onMouseOutArtiste(){
+	document.querySelector(".mosaique_artiste").style.color = "#99a3bb";
+}
+
+function onMouseOutAlbum(){
+	document.querySelector(".mosaique_album").style.color = "#99a3bb";
+}
 
 //permet d'afficher les informations sur l'artiste dans une pop-up
 function openModalArtiste(musique){
@@ -263,7 +278,7 @@ function openModalArtiste(musique){
 	let popup_artiste = document.getElementById("popup_artiste");
 	let div_info = document.createElement("div");
 	div_info.className = "div_info";
-	div_info.innerHTML = "<img src=" + musique.img_artiste + " id=img_artiste style=width:400px>" + "<div id='nom_artiste'>" + musique.nom_artiste + "</div>";
+	div_info.innerHTML = "<img src=" + musique.img_artiste + " id=img_artiste style=width:400px>" + "<div id='nom_artiste'>" + musique.nom_artiste + "</div>" + "<div id='info_artiste_popup'>" + musique.info_artiste + "</div>";
 	div_info.style.fontSize = "40px";
 	div_info.style.textAlign = "center";
 	div_info.style.color = "white";
@@ -284,6 +299,7 @@ function closeModalArtiste(){
 //permet d'afficher les artistes et leurs informations
 var menu_artiste = document.querySelector(".menu_artiste");
 menu_artiste.onclick=function(){
+	document.querySelector("#info_album").innerHTML="";
 	fetch("./api/controller/afficheArtiste.php") 
 	.then( response => response.json() )
 	.then( data => {
@@ -294,6 +310,8 @@ menu_artiste.onclick=function(){
 			div.className = "mosaique_artiste";
 			div.innerHTML = "<img src=" + musique.img_artiste + " id=img_artiste>" + "<span id='nom_artiste'>" + musique.nom_artiste + "</span>";
 			div.onclick = function(){openModalArtiste(musique);}
+			div.onmouseover = function(){onMouseOverArtiste();}
+			div.onmouseout = function(){onMouseOutArtiste();}
 			info_artiste.appendChild(div);
 		});
 	})
@@ -329,6 +347,7 @@ function closeModalAlbum(){
 //permet d'afficher les albums des artistes
 var menu_album = document.querySelector(".menu_album");
 menu_album.onclick=function(){
+	document.querySelector("#info_artiste").innerHTML="";
 	fetch("./api/controller/afficheAlbum.php") 
 	.then( response => response.json() )
 	.then( data => {
@@ -339,12 +358,12 @@ menu_album.onclick=function(){
 			div.className = "mosaique_album";
 			div.innerHTML = "<img src=" + musique.img_album + ">" + "<span id='nom_album'>" + musique.nom_album + "</span>";
 			div.onclick = function(){openModalAlbum(musique);}
+			div.onmouseover = function(){onMouseOverAlbum();}
 			info_album.appendChild(div);
 		});
 	})
 	.catch(error => { console.log(error) });
 }
-
 
 
 //supprimer des musiques
