@@ -47,6 +47,8 @@
 	</div>
 
 	<!-- TOP -->
+	<div id="info_artiste"></div><div id="fader" onclick="closeModalArtiste()"></div><div id="popup_artiste"></div>
+    <div id="info_album"></div><div id="fader" onclick="closeModalAlbum()"></div><div id="popup_artiste"></div>
 	<div id="main_content">
 		<main>
 			<div id="content_img_title" class="content">
@@ -76,7 +78,7 @@
 					</div>
 					<input id="nom_playlist" placeholder="👉 GIVE A NAME*" type="text" name="nom_playlist">
 					<input id="buttonplaylist" type="button" name="submit" value="✅ CREATE YOUR PLAYLIST"></input>
-					<!-- <input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input> -->
+					<input id="buttonRemove" type="button" name="submit" style="visibility:hidden;" value="🗑 REMOVE SONGS SELECTED"></input>
 				</form>
 			</div>
 		</form>
@@ -85,9 +87,7 @@
 </div>
 
 <!-- FOOTER -->
-<div id="control">
-	
-</div>
+<div id="control"></div>
 <div class="space" style="height: 300px"></div>
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|IBM+Plex+Sans:500" rel="stylesheet">
 
