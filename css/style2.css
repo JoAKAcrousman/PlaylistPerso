@@ -412,7 +412,7 @@ margin-top:20px;
     width:50%;
     margin-left: 400px;
     margin-right: 400px;
-    top:300px;
+    top:100px;
     background-color: #2b313e;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -432,6 +432,7 @@ margin-top:20px;
 .mosaique_artiste{
     width: 200px;
     height: 200px;
+    margin: 10px;
 }
 
 .mosaique_artiste img{
@@ -457,7 +458,7 @@ margin-top:20px;
     width:50%;
     margin-left: 400px;
     margin-right: 400px;
-    top:300px;
+    top:100px;
     background-color: #2b313e;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -467,6 +468,7 @@ margin-top:20px;
 .mosaique_album {
     width: 200px;
     height: 200px;
+    margin: 10px;
 }
 
 .mosaique_album img{
