@@ -45,10 +45,8 @@ document.ready( () => {
 	.then( response => response.json() )
 	.then( data => {
 		let titre = document.getElementById('titre');
-			// document.querySelector("#main_content > main > div > div.content__text > canvas").innerHTML='';
 			data.forEach( musique => {
 				let div = document.createElement("div");
-				// div.htmlFor = "input-radio-" + musique.toLowerCase();
 				div.innerHTML = "<span id='musique_titre'>" + musique.titre + "</span>" + "<span id='musique_artiste'>" + musique.artiste + "</span>" + "<span id='musique_album'>" + musique.album + "</span>";
 
 				let input = document.createElement("input");
@@ -120,9 +118,7 @@ document.getElementById("buttonplaylist").onclick = event => {
 
 					let content_titre = document.querySelector(".content__text");
 					content_titre.innerHTML="";
-					/////////////////////////////////////////////
-					///////////////BOUTON SUPPRIMER//////////////
-					/////////////////////////////////////////////
+
 					let buttonRemove = document.getElementById("buttonRemove");
 					buttonRemove.style.visibility = "visible";
 
@@ -157,11 +153,6 @@ document.getElementById("buttonplaylist").onclick = event => {
 						container_h1.appendChild(h1);
 						li.appendChild(input);
 						li.appendChild(div);
-						/////////////////////////////////////////////
-						///////////////BOUTON SUPPRIMER//////////////
-						/////////////////////////////////////////////
-						//titre.appendChild(buttonRemove);
-
 					});
 				})
 				.catch(error => { console.log(error) });
@@ -372,31 +363,25 @@ function suppressionMusique(newmusique){
 	let params = {}
 	var checkedValue = [];
 	var removeElements = document.getElementsByClassName('inputElements');
+
 	//permet de savoir quels sont les checkboxs cochées
 	for(var i=1; removeElements[i]; ++i){
       	if(removeElements[i].checked){
            checkedValue.push(removeElements[i].value);
     	}
 	}
-
 	params['id'] = checkedValue;
 
 	// permet de créer une playlist
 	let newName = document.getElementById('new_name');
 	params['nom_playlist'] =  newName.innerHTML;
-
 		var body = JSON.stringify(params);
-				
 			fetch("./api/controller/deletefromPlaylist.php?name="+params['nom_playlist']+"&id="+params['id']) 
 				.then( response => response.json() )
 				.then( data => {
-
 					document.getElementById('titre').innerHTML = "";
 					let titre = document.getElementById('titre');
 
-					/////////////////////////////////////////////
-					///////////////BOUTON SUPPRIMER//////////////
-					/////////////////////////////////////////////
 					let buttonRemove = document.getElementById("buttonRemove");
 					buttonRemove.style.visibility = "visible";
 
@@ -418,16 +403,9 @@ function suppressionMusique(newmusique){
 						titre.appendChild(li);
 						li.appendChild(input);
 						li.appendChild(div);
-
-						/////////////////////////////////////////////
-						///////////////BOUTON SUPPRIMER//////////////
-						/////////////////////////////////////////////
-						//titre.appendChild(buttonRemove);
-
 					});
 				})
 				.catch(error => { console.log(error) });
-
 }
 
 

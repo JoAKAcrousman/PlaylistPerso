@@ -229,8 +229,8 @@ li label{
 }
 
 #affiche_info{
-margin-left:40px;
-margin-top:20px;
+    margin-left:40px;
+    margin-top:20px;
 }
 
 #affiche_info img{
@@ -417,6 +417,12 @@ margin-top:20px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
+}
+
+#info_artiste_popup{
+    width: 70%;
+    margin:auto;
+    font-size: 14px;
 }
 
 #fader{
